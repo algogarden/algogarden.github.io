@@ -1,0 +1,575 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Hua Trung</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- favicon
+============================================		
+<link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+ -->
+<!-- Google Fonts
+============================================ -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+
+<!-- Bootstrap CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<!-- font-awesome CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<!-- owl.carousel CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/css/owl.carousel.css">
+<link rel="stylesheet" href="/assets/css/owl.theme.css">
+<link rel="stylesheet" href="/assets/css/owl.transitions.css">
+<!-- meanmenu CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/css/meanmenu.css">
+<!-- normalize CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/css/normalize.css">
+<!-- main CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- style CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/style.css">
+<!-- responsive CSS
+============================================ -->
+<link rel="stylesheet" href="/assets/css/responsive.css">
+
+<!-- <link rel="stylesheet" href="/assets/css/fallenscence.css"> -->
+
+<!-- modernizr JS
+============================================ -->
+<script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+<style>
+   .preloader {
+      margin: 300px auto;
+      width: 70px;
+      height: 30px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .preloader > div {
+      background-color: #03a9f4;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      
+      -webkit-animation: stretchdelay 0.7s infinite ease-in-out;
+      animation: stretchdelay 0.7s infinite ease-in-out;
+    }
+
+    .preloader .circ2 {
+      -webkit-animation-delay: -0.6s;
+      animation-delay: -0.6s;
+    }
+
+    .preloader .circ3 {
+      -webkit-animation-delay: -0.5s;
+      animation-delay: -0.5s;
+    }
+
+    .preloader .circ4 {
+      -webkit-animation-delay: -0.4s;
+      animation-delay: -0.4s;
+    }
+
+    .preloader .circ5 {
+      -webkit-animation-delay: -0.3s;
+      animation-delay: -0.3s;
+    }
+
+    @-webkit-keyframes stretchdelay {
+      0%, 40%, 100% { -webkit-transform: translateY(-10px) }  
+      20% { -webkit-transform: translateY(-20px) }
+    }
+
+    @keyframes stretchdelay {
+      0%, 40%, 100% { 
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+      } 20% {
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+      }
+    }
+</style>
+</head>
+  <!-- header-area start -->
+<header id="header" class="header-area">
+    <div class="header-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="logo">
+              <a href="/"><img src="/assets/img/logo/footer-logo.png" alt="Logo" /></a>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="main-menu">
+              <nav>
+                <ul class="main-nav navbar-right">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/categories/work/">Work</a></li>
+                  <li><a href="/categories/life/">Life</a></li>
+                  <li><a href="/categories/fun/">FUN</a></li>
+                  <li><a href="/categories/me/">Me</a></li>
+                </ul>
+              </nav>
+            </div><!-- /.main-menu -->
+          </div>
+        </div>
+      </div>
+      <!-- mobile-menu-area start -->
+      <div class="mobile-menu-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <nav id="dropdown">
+                <ul class="main-nav navbar-right">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/categories/work/">Work</a></li>
+                  <li><a href="/categories/life/">Life</a></li>
+                  <li><a href="/categories/fun/">fun</a></li>
+                  <li><a href="/categories/me/">Me</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- mobile-menu-area end -->
+    </div><!-- /.header-bottom -->
+  </header>
+  <!-- header-area end -->
+
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+        line-height: 1.4;
+        color: #000;
+    }
+
+
+    .resume-wrapper {
+        background: #fff;
+        max-width: 950px;
+        margin: 5em auto 2em;
+        box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .resume-wrapper section {
+        padding: 20px 25px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .resume-wrapper .two-columns {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .resume-wrapper .two-columns .column:first-child {
+        flex: 2;
+        border-right: 1px solid #ddd;
+    }
+
+    .resume-wrapper .two-columns .column:last-child {
+        flex: 1;
+    }
+
+    .resume-wrapper .two-columns .column section:last-of-type {
+        border-bottom: none;
+    }
+
+    .resume-wrapper .even-columns {
+        display: flex;
+        margin: 0 -15px;
+    }
+
+    .resume-wrapper .even-columns .even-columns-child {
+        flex: 1;
+        padding: 10px 15px 15px;
+    }
+
+    .resume-wrapper .even-columns.center {
+        text-align: center;
+    }
+
+
+    .wrapper {
+        padding: 50px;
+        width: 500px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .resume-wrapper a:focus{
+        text-decoration: none;
+    }
+
+    .resume-wrapper p{
+        font-weight: 400;
+    }
+    .roles {
+        font-size: 30px;
+        height: 50px;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+
+    .roles div {
+        height: 50px;
+        transition: margin-top 1s ease-in-out;
+    }
+</style>
+<div class="resume-wrapper">
+    <section class="name">
+        <div class="wrapper">
+            <div class="roles" style="font-size:20px">
+                <div>
+                    I'm not the one who write love song.
+                </div>
+                <div>
+                    I'm not the one who write love story.
+                </div>
+                <div>
+                    I'm the one who write code by love.
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="two-columns">
+        <div class="column">
+            <section>
+                <p> Thanks for the nice visit. My full name is Hua Vi Trung. I'm currently studying at
+                     University of Information Techonology. I love sharing my ideas so I put them into words right here.
+                    Additionally, I listen to my inner voice and write it down.</p>
+                <p>
+                    Coding is usable art and programing is an extremely creative profession. It's logic based creativity.
+                    For me, I let my mind drift away and destinate to a place where only me and my code exist. After that, the bug comes,
+                    We go separate ways.
+                </p>
+
+            </section>
+        </div>
+        <div class="column">
+            <section>
+                <h2>Contact Me</h2>
+                <div class="timeline condensed">
+                    <span class="line"></span>
+                    <div class="timeline-item">
+                        <p><i class="fa fa-envelope-o"></i> huavitrung@gmail.com</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p><a style="color:black" target="_blank" href="https://www.linkedin.com/in/huatrung/"><i class="fa fa-linkedin-square"></i> linkedin </a></p>
+                    </div>
+                    <div class="timeline-item">
+                        <p><a style="color:black" target="_blank" href="https://www.facebook.com/vitrung97"><i class="fa fa-facebook-square"></i> facebook </a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section>
+        <h2>Interests</h2>
+        <div class="even-columns">
+            <div class="even-columns-child">
+                <div class="interest-icon">
+                    <img src="https://image.flaticon.com/icons/svg/593/593365.svg" alt="Coding" />
+                </div>
+                <p style="margin-top:10px;text-align:center"><em>Coding</em></p>
+            </div>
+            <div class="even-columns-child">
+                <div class="interest-icon">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrm0prxXAggcCn27Um2ch4dpPCKfcb-QUR03GNv-3_IhpkUPPK"
+                        alt="Dota2" />
+                </div>
+                <p style="margin-top:10px;text-align:center"><em>Dota2-ing</em></p>
+            </div>
+            <div class="even-columns-child">
+                <div class="interest-icon">
+                    <img src="https://image.flaticon.com/icons/svg/948/948256.svg" alt="Freepik icon from Flaticon" />
+                </div>
+                <p style="margin-top:10px;text-align:center"><em>Reading</em></p>
+            </div>
+            <div class="even-columns-child">
+                <div class="interest-icon">
+                    <img src="https://image.flaticon.com/icons/svg/991/991943.svg" alt="Freepik icon from Flaticon" />
+                </div>
+                <p style="margin-top:10px;text-align:center"><em>Sleeping</em></p>
+            </div>
+            <div class="even-columns-child">
+                <div class="interest-icon">
+                    <img src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/1416364765_java_coffee_x_cup_application-2-512.png"/>
+                </div>
+                <p style="margin-top:10px;text-align:center"><em>Coffee-ing</em></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Personal Projects</h2>
+        <div class="even-columns">
+            <div class="even-columns-child">
+                <h3>Payment Simulation Application</h3>
+                <p><a target="_blank" href="https://github.com/HuaTrung/Payment_App"><strong>github</strong></a></p>
+                <p>It's my final project which simulates a payment application with 2 key features. The first one is are real-time money
+                     transfering process. The last is account management with registering (sms authentication), ignoring & locking.</p>
+                <p>This application was created based ReactNative and API was written by Nodejs, MongoDB, Firebase.</p>
+            </div>
+            <div class="even-columns-child">
+                <h3>My Personal Blog</h3>
+                <p><em>https://huatrung.github.io/</em></p>
+                <p>I did my best, and Jekyll did the rest. </p>
+            </div>
+            
+        </div>
+    </section>
+</div>
+<footer id="footer" class="footer-area text-center">
+    <div class="footer-logo">
+      <!-- <a href="#"><img src="/assets/img/logo/footer-logo.png" alt="Footer Logo" /></a> -->
+    </div>
+    <p class="copyright-text">&copy; Copyright© 2019 Blogging. All right reserved.</p>
+  </footer>
+
+  <!-- jquery
+============================================ -->
+<script src="/assets/js/vendor/jquery-1.11.3.min.js"></script>
+<!-- bootstrap JS
+============================================ -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- meanmenu JS
+============================================ -->
+<script src="/assets/js/jquery.meanmenu.js"></script>
+<!-- owl.carousel JS
+============================================ -->
+<script src="/assets/js/owl.carousel.min.js"></script>
+<!-- scrollUp JS
+============================================ -->
+<script src="/assets/js/jquery.scrollUp.min.js"></script>
+<!-- plugins JS
+============================================ -->
+<script src="/assets/js/plugins.js"></script>
+<!-- main JS
+============================================ -->
+<script src="/assets/js/main.js"></script>
+<script>
+  window.addEventListener("load",function(event){
+
+    $(".preloader").addClass( "hidden" );
+    $(".main_home").removeClass( "hidden" );
+    event.preventDefault();
+
+  //   var owl = $('.owl-wrapper');
+  //   owl.trigger('play.owl.autoplay',[1])
+
+  //   var LeafScene = function(el) {
+  //   this.viewport = el;
+  //   this.world = document.createElement('div');
+  //   this.leaves = [];
+
+  //   this.options = {
+  //     numLeaves: 20,
+  //     wind: {
+  //       magnitude: 1.2,
+  //       maxSpeed: 12,
+  //       duration: 300,
+  //       start: 0,
+  //       speed: 0
+  //     },
+  //   };
+
+  //   this.width = this.viewport.offsetWidth;
+  //   this.height = this.viewport.offsetHeight;
+
+  //   // animation helper
+  //   this.timer = 0;
+
+  //   this._resetLeaf = function(leaf) {
+
+  //     // place leaf towards the top left
+  //     leaf.x = this.width * 2 - Math.random()*this.width*1.75;
+  //     leaf.y = -10;
+  //     leaf.z = Math.random()*200;
+  //     if (leaf.x > this.width) {
+  //       leaf.x = this.width + 10;
+  //       leaf.y = Math.random()*this.height/2;
+  //     }
+  //     // at the start, the leaf can be anywhere
+  //     if (this.timer == 0) {
+  //       leaf.y = Math.random()*this.height;
+  //     }
+
+  //     // Choose axis of rotation.
+  //     // If axis is not X, chose a random static x-rotation for greater variability
+  //     leaf.rotation.speed = Math.random()*10;
+  //     var randomAxis = Math.random();
+  //     if (randomAxis > 0.5) {
+  //       leaf.rotation.axis = 'X';
+  //     } else if (randomAxis > 0.25) {
+  //       leaf.rotation.axis = 'Y';
+  //       leaf.rotation.x = Math.random()*180 + 90;
+  //     } else {
+  //       leaf.rotation.axis = 'Z';
+  //       leaf.rotation.x = Math.random()*360 - 180;
+  //       // looks weird if the rotation is too fast around this axis
+  //       leaf.rotation.speed = Math.random()*3;
+  //     }
+
+  //     // random speed
+  //     leaf.xSpeedVariation = Math.random() * 0.8 - 0.4;
+  //     leaf.ySpeed = Math.random() + 1.5;
+
+  //     return leaf;
+  //   }
+
+  //   this._updateLeaf = function(leaf) {
+  //     var leafWindSpeed = this.options.wind.speed(this.timer - this.options.wind.start, leaf.y);
+
+  //     var xSpeed = leafWindSpeed + leaf.xSpeedVariation;
+  //     leaf.x -= xSpeed;
+  //     leaf.y += leaf.ySpeed;
+  //     leaf.rotation.value += leaf.rotation.speed;
+
+  //     var t = 'translateX( ' + leaf.x + 'px ) translateY( ' + leaf.y + 'px ) translateZ( ' + leaf.z + 'px )  rotate' + leaf.rotation.axis + '( ' + leaf.rotation.value + 'deg )';
+  //     if (leaf.rotation.axis !== 'X') {
+  //       t += ' rotateX(' + leaf.rotation.x + 'deg)';
+  //     }
+  //     leaf.el.style.webkitTransform = t;
+  //     leaf.el.style.MozTransform = t;
+  //     leaf.el.style.oTransform = t;
+  //     leaf.el.style.transform = t;
+
+  //     // reset if out of view
+  //     if (leaf.x < -10 || leaf.y > this.height + 10) {
+  //       this._resetLeaf(leaf);
+  //     }
+  //   }
+
+  //   this._updateWind = function() {
+  //     // wind follows a sine curve: asin(b*time + c) + a
+  //     // where a = wind magnitude as a function of leaf position, b = wind.duration, c = offset
+  //     // wind duration should be related to wind magnitude, e.g. higher windspeed means longer gust duration
+
+  //     if (this.timer === 0 || this.timer > (this.options.wind.start + this.options.wind.duration)) {
+
+  //       this.options.wind.magnitude = Math.random() * this.options.wind.maxSpeed;
+  //       this.options.wind.duration = this.options.wind.magnitude * 50 + (Math.random() * 20 - 10);
+  //       this.options.wind.start = this.timer;
+
+  //       var screenHeight = this.height;
+
+  //       this.options.wind.speed = function(t, y) {
+  //         // should go from full wind speed at the top, to 1/2 speed at the bottom, using leaf Y
+  //         var a = this.magnitude/2 * (screenHeight - 2*y/3)/screenHeight;
+  //         return a * Math.sin(2*Math.PI/this.duration * t + (3 * Math.PI/2)) + a;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // LeafScene.prototype.init = function() {
+
+  //   for (var i = 0; i < this.options.numLeaves; i++) {
+  //     var leaf = {
+  //       el: document.createElement('div'),
+  //       x: 0,
+  //       y: 0,
+  //       z: 0,
+  //       rotation: {
+  //         axis: 'X',
+  //         value: 0,
+  //         speed: 0,
+  //         x: 0
+  //       },
+  //       xSpeedVariation: 0,
+  //       ySpeed: 0,
+  //       path: {
+  //         type: 1,
+  //         start: 0,
+
+  //       },
+  //       image: 1
+  //     };
+  //     this._resetLeaf(leaf);
+  //     this.leaves.push(leaf);
+  //     this.world.appendChild(leaf.el);
+  //   }
+
+  //   this.world.className = 'leaf-scene';
+  //   this.viewport.appendChild(this.world);
+
+  //   // set perspective
+  //   this.world.style.webkitPerspective = "400px";
+  //   this.world.style.MozPerspective = "400px";
+  //   this.world.style.oPerspective = "400px";
+  //   this.world.style.perspective = "400px";
+    
+  //   // reset window height/width on resize
+  //   var self = this;
+  //   window.onresize = function(event) {
+  //     self.width = self.viewport.offsetWidth;
+  //     self.height = self.viewport.offsetHeight;
+  //   };
+  // }
+
+  // LeafScene.prototype.render = function() {
+  //   this._updateWind();
+  //   for (var i = 0; i < this.leaves.length; i++) {
+  //     this._updateLeaf(this.leaves[i]);
+  //   }
+
+  //   this.timer++;
+
+  //   requestAnimationFrame(this.render.bind(this));
+  // }
+
+  // // start up leaf scene
+  // var leafContainer = document.querySelector('.falling-leaves'),
+  //     leaves = new LeafScene(leafContainer);
+
+  // leaves.init();
+  // leaves.render();
+  })
+
+</script>
+
+
+<script>
+
+    var current = 1; //keeps track of the current div
+    var height = $('.roles').height(); //the height of the roles div
+    var numberDivs = $('.roles').children().length; //the number of children of the roles div
+    var first = $('.roles div:nth-child(1)'); //the first div nested in roles div
+    setInterval(function () {
+        var number = current * -height;
+        first.css('margin-top', number + 'px');
+        if (current === numberDivs) {
+            first.css('margin-top', '0px');
+            current = 1;
+        } else current++;
+    }, 2000);
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92878342-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92878342-1');
+</script>
+

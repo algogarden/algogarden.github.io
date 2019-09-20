@@ -1,0 +1,40 @@
+---
+layout: default
+title: Home
+---
+<h2 class="section-title">latest reviews</h2>
+<div class="row">
+  {% for post in paginator.posts %}
+  <div class="col-md-12">
+    <div class="single-review">
+      <div class="post-img">
+        <!-- 770 x 300-->
+        <a href="{{ post.url | absolute_url }}"><img src="assets/img/blog/title/{{post.image}}" alt="Review Image" style="width:770px;height:300px"/></a>
+        <a href="/categories/{{post.categories}}" class="post-tag">{{ post.categories }}</a>
+        <div class="post-info">
+          <p>
+            <span class="post-date"><a href="#">{{ post.date | date_to_long_string  }}</a></span>
+            <span class="post-comments"><a href="#">0 comments</a></span>
+            <!-- <span class="post-social-links">
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Likes"><i class="fa fa-heart"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
+                  class="fa fa-facebook"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i
+                  class="fa fa-twitter"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i
+                  class="fa fa-google-plus"></i></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i
+                  class="fa fa-pinterest"></i></a>
+            </span> -->
+          </p>
+        </div>
+      </div>
+      <div class="post-content">
+        <h6 class="post-title" ><a href="{{ post.url | absolute_url }}"title="{{ post.title }}">{{ post.title }}</a></h6>
+        <p class="post-short-desc">{{ post.description}}</p>
+        <a href="{{ post.url | absolute_url }}" class="continue-link">Continue Reading...</a>
+      </div>
+    </div><!-- /.single-review -->
+  </div>
+  {% endfor %}
+</div>

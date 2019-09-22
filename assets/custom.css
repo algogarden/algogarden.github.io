@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+
+/*== start of code for tool_customtips ==*/
+.tool_custom {
+    cursor: help;
+    position: relative;
+}
+
+
+/*== common styles for both parts of tool_custom tip ==*/
+.tool_custom::before,
+.tool_custom::after {
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+}
+
+.tool_custom:hover::before,
+.tool_custom:focus::before,
+.tool_custom:hover::after,
+.tool_custom:focus::after {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 100; 
+}
+
+
+/*== pointer tip ==*/
+.tool_custom::before {
+    border-style: solid;
+    border-width: 1em 0.75em 0 0.75em;
+    border-color: #EDEFF0 transparent transparent transparent;
+    bottom: 100%;
+    content: "";
+    margin-left: -0.5em;
+    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26), opacity .65s .5s;
+    transform:  scale(.6) translateY(-90%);
+} 
+
+.tool_custom:hover::before,
+.tool_custom:focus::before {
+    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+}
+
+
+/*== speech bubble ==*/
+.tool_custom::after {
+    background: #EDEFF0;
+    border-radius: .25em;
+    bottom: 180%;
+    color: #3E474F;
+    content: attr(data-tip);
+    margin-left: -8.75em;
+    padding: 1em;
+    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+    transform:  scale(.6) translateY(50%);  
+    width: 17.5em;
+}
+
+.tool_custom:hover::after,
+.tool_custom:focus::after  {
+    transition: all .65s cubic-bezier(.84,-0.18,.31,1.26);
+}
+
+@media (max-width: 760px) {
+  .tool_custom::after { 
+        font-size: .75em;
+        margin-left: -5em;
+        width: 10em; 
+  }
+}
+
+
+
+
+
+

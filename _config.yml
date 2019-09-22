@@ -27,4 +27,4 @@ paths:
   work: /categories/work/
   life: /categories/life/
   fun: /categories/fun/
-  me: /categories/me/
+  convexhull: /algorithm/geometry/convex-hull/

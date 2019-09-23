@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://0.0.0.0:4000</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sun, 22 Sep 2019 05:07:39 -0500</pubDate>
-    <lastBuildDate>Sun, 22 Sep 2019 05:07:39 -0500</lastBuildDate>
+    <pubDate>Mon, 23 Sep 2019 22:19:24 +0700</pubDate>
+    <lastBuildDate>Mon, 23 Sep 2019 22:19:24 +0700</lastBuildDate>
 
     
       <item>
         <title>Tối ưu hóa cache với LFU và LRU</title>
-        <link>http://0.0.0.0:4000/work/2019/07/24/implement-cache-lru-lfu.html</link>
-        <pubDate>Wed, 24 Jul 2019 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/work/2019/07/24/implement-cache-lru-lfu.html</link>
+        <pubDate>Wed, 24 Jul 2019 00:00:00 +0700</pubDate>
         <author></author>
         <description>&lt;p&gt;Tối ưu hóa luôn là vấn đề được quan tâm hàng đầu trong nhiều lĩnh vực. Bởi vì tài nguyên chúng ta đang sử dụng có giới hạn, vậy nên con người luôn tìm cách giảm thiếu chi phí và thời gian tới mức tối thiểu.&lt;/p&gt;
 
@@ -156,8 +156,8 @@ Heapify có độc phức tạp là O(logn). Vậy nên khi so sánh update và 
     
       <item>
         <title>Tâm sự cùng mưa</title>
-        <link>http://0.0.0.0:4000/life/2019/05/01/tam-su-cung-mua.html</link>
-        <pubDate>Wed, 01 May 2019 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/life/2019/05/01/tam-su-cung-mua.html</link>
+        <pubDate>Wed, 01 May 2019 00:00:00 +0700</pubDate>
         <author></author>
         <description>&lt;p&gt;Tại thời điểm bản tình ca ánh trăng chuẩn bị nhường chỗ cho những tia nắng nhộn nhịp, tôi gặp lại người bạn cũ của mình. Mưa . Cơn mưa không báo trước này rả rích cuốn trôi đi phần nào cái oi bức của những ngày hạ Sài Gòn. Mưa không to lắm, nhẹ nhàng rải đều trong không trung. Có lẽ đúng khi nói mưa là sự kết nối đến tâm tư người ngắm mưa. Bất giác từ lúc nào bàn tay tôi đã đưa ra đón lấy những giọt mưa.
 &lt;br /&gt;&lt;/p&gt;
@@ -193,8 +193,8 @@ Tôi thở dài.&lt;/p&gt;
     
       <item>
         <title>[Kafka for Dummies - Part 1] Introduction</title>
-        <link>http://0.0.0.0:4000/work/2019/03/29/p1-introduction-apache-kafka.html</link>
-        <pubDate>Fri, 29 Mar 2019 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/work/2019/03/29/p1-introduction-apache-kafka.html</link>
+        <pubDate>Fri, 29 Mar 2019 00:00:00 +0700</pubDate>
         <author></author>
         <description>&lt;p&gt;Big Data is way too hotter than you think. It’s gonna get hotter and show no signs of stopping. One of the biggest challenges associated with Big Data is, turn data into meaningful insights. However before diving into that part, the data has to be first collected then is transfered impeccably in purpose of the availability to the end-users. Hadoop, Spark, Scala, ElasticSearch, … are types of platforms, frameworks and technologies which have emerged to help us handle the ever-growing amount of data over the internet. Among them, Kafka plays an important role. Kafka’s not hard to learn but it has many remarkable theories and concepts. That’s where this series comes in. To those who know nothing about Kafka or wanna revise quickly, my goal is to supply all the basics you need. At the end of the road, you will get a concise overview and apply Kafka easily.&lt;/p&gt;
 

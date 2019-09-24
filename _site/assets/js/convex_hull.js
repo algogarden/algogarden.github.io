@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
 		canvas: canvas,
 		engine: engine,
 		options: {
-			width: 500,
+			width: 1080,
 			height: 500,
 			background: 'transparent',
 			wireframes: false,
@@ -36,7 +36,8 @@ window.addEventListener('load', function() {
 	var floor = Matter.Bodies.rectangle(250, 520, 500, 40, {
 		isStatic: true, //An immovable object
 		render: {
-			visible: false
+			
+			visible: true
 		}
 	});
 	Matter.World.add(world, floor);

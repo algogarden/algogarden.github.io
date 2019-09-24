@@ -53,29 +53,23 @@ var runGiftWrapping = async function(){
   numberOfBalls = Math.floor(Math.random() * 20) + 30
   ctx = canvas.getContext("2d");
 
+  leftMost = null
   //create balls
   for (let i = 0; i < numberOfBalls; i++){
       let ball = {
           x: Math.floor(Math.random() * (width - 4 * radius)) + radius, 
           y: Math.floor(Math.random() * (height - 15 * radius)) + 105 + radius
       }
+      if (leftMost && ball.x < leftMost.x)
+        leftMost = ball
+      else if (!leftMost)
+        leftMost = ball
       listBall.push(ball)
   }
-
-  leftMost = listBall[0]
-  let nextVertex;
-  let index;
-  
-  // find the first leftmost
-  for (let i = 0; i < listBall.length; i++){
-    if (listBall[i].x < leftMost.x){
-      leftMost = listBall[i]
-    }
-  }
-
+  console.log(leftMost)
   currentVertex = leftMost
-  nextVertex = listBall[0]
-  index = 1
+  let nextVertex = listBall[0]
+  let index = 1
   convexHull.push(leftMost)
   
   for (index; ; ){

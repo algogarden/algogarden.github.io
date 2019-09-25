@@ -438,7 +438,7 @@ button.tab-button.active {
 	top: 0;
 	left: 0;
 	opacity: 0;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 }
 .work-item:after {
 	position: absolute;
@@ -449,7 +449,7 @@ button.tab-button.active {
 	bottom: 0;
 	right: 0;
 	opacity: 0;
-	transition: all 0.5s ease;
+	transition: all 0.2s ease;
 	transition-delay: 0.2s;
 }
 .work-item:hover::before,
@@ -500,8 +500,8 @@ button.tab-button.active {
 	right: 0;
 	z-index: 1;
 	opacity: 0;
-	visibility: hidden;
-	transition: .3s all ease-in-out;
+	visibility: hi1den;
+	transition: .2s all ease-in-out;
 }
 .project-description h3 {
 	position: relative;

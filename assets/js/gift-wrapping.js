@@ -17,7 +17,7 @@ function getWidth() {
       document.documentElement.clientHeight
     );
   }
-  
+  var timeToSleep = 16.66
   var canvas;
   var width;
   var height;
@@ -50,7 +50,7 @@ var runGiftWrapping = async function(){
   listBall = []
   convexHull = []
   radius = 10
-  numberOfBalls = Math.floor(Math.random() * 20) + 30
+  numberOfBalls = Math.floor(Math.random() * 50) + 50
   ctx = canvas.getContext("2d");
 
   leftMost = null
@@ -105,7 +105,7 @@ var runGiftWrapping = async function(){
         //console.log(convexHull)
       }
     }
-    await sleep(33,33)
+    await sleep(timeToSleep)
   }
   drawResult()
   runAlgorithm = false

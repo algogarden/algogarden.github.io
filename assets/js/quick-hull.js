@@ -75,9 +75,8 @@ var runQuickHull = async function(){
       listBall.push(ball)
   }
 
-  convexHull.push(leftMost, rightMost)
-  drawCanvas()
-  await sleep(timeToSleep)
+  convexHull.push(leftMost)
+  await drawCanvas()
   //
   let S1 = []
   let S2 = []
@@ -92,13 +91,18 @@ var runQuickHull = async function(){
     }
   }
   
-  quickHull(S1, leftMost, rightMost)
-  quickHull(S2, rightMost, leftMost)
+  let spliceIndex = 1;
+  await quickHull(S1, leftMost, rightMost, spliceIndex)
+
+  convexHull.push(rightMost)
+  await drawCanvas()
+
+  await quickHull(S2, rightMost, leftMost)
 
   runAlgorithm = false
 }
 
-var quickHull = async function(S, A, B) {
+var quickHull = async function(S, A, B, indexTosplice) {
   if (S.length == 0) return
   let farthest;
   let farthestDistance = 0
@@ -109,9 +113,7 @@ var quickHull = async function(S, A, B) {
       farthestDistance = temp
     }
   }
-  convexHull.push(farthest)
-  drawCanvas()
-  await sleep(timeToSleep)
+  
   let S1 = []
   let S2 = []
   for (i = 0; i < S.length; i++){
@@ -123,14 +125,19 @@ var quickHull = async function(S, A, B) {
     }
   }
 
-  quickHull(S1, A, farthest)
-  quickHull(S2, farthest, B)
+  await quickHull(S1, A, farthest)
+
+  convexHull.push(farthest)
+  await drawCanvas()
+
+  await quickHull(S2, farthest, B)
 }
 
-var drawCanvas = function(){
+var drawCanvas = async function(){
   clearCanvas()
   drawCircle()
   drawConvexHull()
+  await sleep(timeToSleep)
 }
 
 var drawCircle = function (){

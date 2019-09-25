@@ -3,22 +3,6 @@
 // 	//Fetch our canvas
 // 	var canvas = document.getElementById('world');
 	
-<<<<<<< HEAD
-	//Setup Matter JS
-	var engine = Matter.Engine.create();
-	var world = engine.world;
-	var render = Matter.Render.create({
-		canvas: canvas,
-		engine: engine,
-		options: {
-			width: 1080,
-			height: 500,
-			background: 'transparent',
-			wireframes: false,
-			showAngleIndicator: false
-		}
-	});
-=======
 // 	//Setup Matter JS
 // 	var engine = Matter.Engine.create();
 // 	var world = engine.world;
@@ -33,7 +17,6 @@
 // 			showAngleIndicator: false
 // 		}
 // 	});
->>>>>>> 0fd57737f8e1c61a539eaa07f4d28570db9b0402
 	
 // 	//Add a ball
 // 	var ball = Matter.Bodies.circle(250, 250, 50, {

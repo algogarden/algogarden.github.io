@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
 	{% include head.html %}
 </head>
@@ -17,95 +16,191 @@
 
 	<!-- Start of header
 		============================================= -->
-		<header id="site-header" class="not-stuck">
-			<div class="container">
-				<div class="row">
-					<div id="header-logo">
-						<a href="#"><img src="{{ 'assets/img//logo/logo.png' | relative_url }}"                            alt="img"></a>
-					</div>
+	<header id="site-header" class="not-stuck">
+		<div class="container">
+			<div class="row">
+				<div id="header-logo">
+					<a href="#"><img src="{{ 'assets/img//logo/logo.png' | relative_url }}" alt="img"></a>
+				</div>
 
-					<div id="menu-burger" class="pull-right not-stuck">
-						<div id="menu-bar">
-							<span class="icon-bar top"></span>
-							<span class="icon-bar middle"></span>
-							<span class="icon-bar bottom"></span>
+				<div id="menu-burger" class="pull-right not-stuck">
+					<div id="menu-bar">
+						<span class="icon-bar top"></span>
+						<span class="icon-bar middle"></span>
+						<span class="icon-bar bottom"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End of header
+		============================================= -->
+
+
+	<!-- Start of page head section
+		============================================= -->
+	<section style="position: relative;top: 100px;background: #e2e1e0;">
+		<!-- Visit https://codepen.io/nicolaskadis/full/brQEOd/ for the latest, no js version! -->
+			<div class="row text-center">
+				<div class="col-md-4 card-container">
+					<div class="card card-flip">
+						<div class="front card-block">
+							<!-- To add FontAwesome Icons use Unicode characters and to set size use font-size instead of fa-*x because when calculating the height (see js), the size of the icon is not calculated if using classes -->
+							<span class="card-img-top fa " style="font-size: 4em"><span class="ti-github"></span></span>
+							<h4 class="card-title">Front Title</h4>
+							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
+							<p class="card-text">Front Text</p>
+						</div>
+						<div class="back card-block">
+							<p>
+								Some example text<br> to
+								<br> increase
+								<br> card
+								<br> height
+								<br> to
+								<br> something
+								<br> long
+							</p>
+							<a href="#" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 card-container">
+					<div class="card card-flip">
+						<div class="front card-block">
+							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
+							<h4 class="card-title">Front Title</h4>
+							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
+							<p class="card-text">Front Text</p>
+						</div>
+						<div class="back card-block">
+							<p>Some example short text</p>
+							<a href="#" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 card-container">
+					<div class="card card-flip">
+						<div class="front card-block">
+							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
+							<h4 class="card-title">Front Title</h4>
+							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
+							<p class="card-text">Front Text</p>
+						</div>
+						<div class="back card-block">
+							<p>Some example text</p>
+							<a href="#" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 card-container">
+					<div class="card card-flip">
+						<div class="front card-block">
+							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
+							<h4 class="card-title">Front Title</h4>
+							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
+							<p class="card-text">Front Text</p>
+						</div>
+						<div class="back card-block">
+							<p>
+								Some example text<br> to
+								<br> increase
+								<br> card
+								<br> height
+								<br> to
+								<br> something
+								<br> long
+							</p>
+							<a href="#" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 card-container">
+					<div class="card card-flip">
+						<div class="front card-block">
+							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
+							<h4 class="card-title">Front Title</h4>
+							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
+							<p class="card-text">Front Text</p>
+						</div>
+						<div class="back card-block">
+							<p>Some example short text</p>
+							<a href="#" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 card-container">
+					<div class="card card-flip">
+						<div class="front card-block">
+							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
+							<h4 class="card-title">Front Title</h4>
+							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
+							<p class="card-text">Front Text</p>
+						</div>
+						<div class="back card-block">
+							<p>Some example text</p>
+							<a href="#" class="btn btn-outline-primary">Read More</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</header>
-	<!-- End of header
-		============================================= -->
-		
-
-	<!-- Start of page head section
-		============================================= -->
-		<section style="position: relative;top: 85px;">
-
-		<div class="row">
-				<div class="col-sm">
-				  One of three columns
-				</div>
-				<div class="col-sm">
-				  One of three columns
-				</div>
-				<div class="col-sm">
-				  One of three columns
-				</div>
-			  </div>
-			<canvas id="world"></canvas>
-        </section>
+		</div>
+		<canvas id="world"></canvas>
+	</section>
 	<!-- End of page head section
 		============================================= -->
 
 	<!-- Start of footer section
 		============================================= -->
-		<footer>
-			<div class="footer-area footer-2">
-				<div class="container">
-					<div class="row">
-						<div class="copy-right-area text-center">
-							<div class="page-head-social-item ul-li">
-								<ul class="page-head-social-list">
-									<li><a href="#"><span class="ti-facebook"></span></a></li>
-									<li><a href="#"><span class="ti-twitter-alt"></span></a></li>
-									<li><a href="#"><span class="ti-google"></span></a></li>
-									<li><a href="#"><span class="ti-instagram"></span></a></li>
-								</ul><!-- /.page-head-social-list -->
-							</div>
-							<span>© puppin 2018 - All Rights Reserved </span>
+	<footer>
+		<div class="footer-area footer-2">
+			<div class="container">
+				<div class="row">
+					<div class="copy-right-area text-center">
+						<div class="page-head-social-item ul-li">
+							<ul class="page-head-social-list">
+								<li><a href="#"><span class="ti-facebook"></span></a></li>
+								<li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+								<li><a href="#"><span class="ti-google"></span></a></li>
+								<li><a href="#"><span class="ti-instagram"></span></a></li>
+							</ul><!-- /.page-head-social-list -->
 						</div>
-						<!-- //copy-right-area -->
-					</div><!--  /.container -->
-				</div><!--  /.row-->
-			</div><!--  /.footer-area -->
-		</footer>
+						<span>© puppin 2018 - All Rights Reserved </span>
+					</div>
+					<!-- //copy-right-area -->
+				</div><!--  /.container -->
+			</div><!--  /.row-->
+		</div><!--  /.footer-area -->
+	</footer>
 	<!-- End of footer section
 		============================================= -->
 
-<!--  Js Library -->
-<script src="{{ 'assets/js/jquery-2.1.4.min.js' | relative_url }}"></script>
-<!-- Include  for bootstrap -->
-<script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
-<!-- Include isotope Js -->
-<script src="{{ 'assets/js/jquery.isotope.min.js' | relative_url }}"></script>
-<!-- Include lightbox -->
-<script src="{{ 'assets/js/lightbox.js' | relative_url }}"></script>
-<!-- Include Video js -->
-<script src="{{ 'assets/js/jquery.magnific-popup.min.js' | relative_url }}"></script>
-<!-- Include Owl-carousel -->
-<script src="{{ 'assets/js/owl.carousel.min.js' | relative_url }}"></script>
-<!-- Include Counter up -->
-<script src="{{ 'assets/js/jquery.counterup.min.js' | relative_url }}"></script>
-<script src="{{ 'assets/js/waypoints.min.js' | relative_url }}"></script>
+	<!--  Js Library -->
+	<script src="{{ 'assets/js/jquery-2.1.4.min.js' | relative_url }}"></script>
+	<!-- Include  for bootstrap -->
+	<script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
+	<!-- Include isotope Js -->
+	<script src="{{ 'assets/js/jquery.isotope.min.js' | relative_url }}"></script>
+	<!-- Include lightbox -->
+	<script src="{{ 'assets/js/lightbox.js' | relative_url }}"></script>
+	<!-- Include Video js -->
+	<script src="{{ 'assets/js/jquery.magnific-popup.min.js' | relative_url }}"></script>
+	<!-- Include Owl-carousel -->
+	<script src="{{ 'assets/js/owl.carousel.min.js' | relative_url }}"></script>
+	<!-- Include Counter up -->
+	<script src="{{ 'assets/js/jquery.counterup.min.js' | relative_url }}"></script>
+	<script src="{{ 'assets/js/waypoints.min.js' | relative_url }}"></script>
 
 
 
-<!-- Include script.js -->
-<script src="{{ 'assets/js/script.js' | relative_url }}"></script>	<script src="{{ 'assets/js/matter.min.js' | relative_url }}"></script>
+	<!-- Include script.js -->
+	<script src="{{ 'assets/js/script.js' | relative_url }}"></script>
+	<script src="{{ 'assets/js/matter.min.js' | relative_url }}"></script>
+	<script src="{{ 'assets/custom.js' | relative_url }}"></script>
 
 	<script src="{{ 'assets/js/convex_hull.js' | relative_url }}"></script>
 	<script src="{{ 'assets/js/gift-wrapping.js' | relative_url}}"></script>
 
-	</body>
-	</html>
+</body>
+
+</html>

@@ -36,7 +36,23 @@ export default class ConvexHull{
         );
       }
 
-    generateBalls(){}
+    initBeforeRunAlgorithm(){
+      this.runAlgorithm = true
+      this.listBall = []
+      this.convexHull = []
+      this.numberOfBalls = Math.floor(Math.random() * 50) + 50
+    }
+
+    generateBalls(){
+      for (let i = 0; i < this.numberOfBalls; i++) {
+        let ball = {
+            x: Math.floor(Math.random() * (this.canvas.width - 4 * this.radius)) + this.radius,
+            y: Math.floor(Math.random() * (this.canvas.height - 15 * this.radius)) + 105 + this.radius
+        };
+        this.listBall.push(ball);
+      }
+    }
+
     async runConvexHull(){}
 
     clearCanvas(){

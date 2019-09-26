@@ -18,10 +18,7 @@ export default class GiftWrapping extends MyConvexHull{
     }
 
     async runConvexHull(){
-        this.runAlgorithm = true
-        this.listBall = []
-        this.convexHull = []
-        this.numberOfBalls = Math.floor(Math.random() * 50) + 50
+        this.initBeforeRunAlgorithm()
 
         this.leftMost = null
 

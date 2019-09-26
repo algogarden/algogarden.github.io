@@ -26,11 +26,7 @@ export default class QuickHull extends MyConvexHull {
   }
 
   async runConvexHull(){
-    this.runAlgorithm = true
-    this.listBall = []
-    this.convexHull = []
-    this.radius = 10
-    this.numberOfBalls = Math.floor(Math.random() * 50) + 50
+    this.initBeforeRunAlgorithm()
   
     this.leftMost = null
     this.rightMost = null

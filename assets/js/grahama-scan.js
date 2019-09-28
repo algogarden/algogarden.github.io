@@ -17,16 +17,13 @@ function getHeight() {
     document.documentElement.clientHeight
   );
 }
-var timeToSleep = 100;
+var timeToSleep = 50;
 var canvas;
 var width;
 var height;
 window.addEventListener("load", function() {
-  canvas = document.getElementById("world");
-  // width = getWidth();
-  // height = getHeight();
+  canvas = document.getElementById("sketch-holder");
   setup();
-  //this.console.log(width, height, this.event.clientX)
   canvas.width = width;
   canvas.height = height;
 });
@@ -51,17 +48,13 @@ var listBall;
 var convexHull;
 var radius = 15;
 var numberOfBalls;
-var ctx;
 var listSortedPoint=[];
-var currentVertex;
 var startPoint;
 var runGrahamaScan = async function() {
   runAlgorithm = true;
   listBall = [];
   convexHull = [];
   numberOfBalls = Math.floor(Math.random() * 50) + 50
-  // numberOfBalls = 10;
-  ctx = canvas.getContext("2d");
   polar_angle = [];
   //create balls
   for (let i = 0; i < numberOfBalls; i++) {
@@ -113,7 +106,7 @@ var dotProduct = function(ball, startPoint) {
 };
 
 var drawCanvas = async function() {
-  clearCanvas();
+  clear();
   drawCircle();
   // drawTest();
   drawConvexHull()
@@ -123,20 +116,11 @@ var drawCircle = function() {
    noStroke();
 
   for (let i = 0; i < numberOfBalls; i++){
-    if (listBall[i] == currentVertex){
-      let c = color(255, 204, 0); // Define color 'c'
-      fill(c); // Use color variable 'c' as fill color
-      noStroke(); // Don't draw a stroke around shapes
-      // noStroke(); // Don't draw a stroke around shapes      
-      circle(listBall[i].x, listBall[i].y,radius);
-      // ctx.fillStyle = ' #3385ff'
-    }
-    else {
       let c = color("#33cc33"); // Define color 'c'
       fill(c); // Use color variable 'c' as fill color
       // noStroke(); // Don't draw a stroke around shapes      
       circle(listBall[i].x, listBall[i].y,radius);
-    }
+
   }
   for(let i=0;i<convexHull.length;i++){
     let c = color("#039be5"); // Define color 'c'
@@ -147,12 +131,12 @@ var drawCircle = function() {
 
 };
 
-var drawTest = function() {
-  for (let i = 0; i < listSortedPoint.length; i++) {
-    ctx.font = '20px serif';
-    ctx.fillText(i,  listBall[listSortedPoint[i].index].x, listBall[listSortedPoint[i].index].y-10  );
-  }
-};
+// var drawTest = function() {
+//   for (let i = 0; i < listSortedPoint.length; i++) {
+//     ctx.font = '20px serif';
+//     ctx.fillText(i,  listBall[listSortedPoint[i].index].x, listBall[listSortedPoint[i].index].y-10  );
+//   }
+// };
 
 var drawConvexHull = function() {
   beginShape();
@@ -176,9 +160,9 @@ var drawResult = function() {
   drawConvexHull(convexHull);
 };
 
-var clearCanvas = function() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-};
+// var clearCanvas = function() {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+// };
 
 var crossProduct = function(a, b, c){
   // debugger

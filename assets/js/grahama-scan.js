@@ -17,7 +17,7 @@ function getHeight() {
     document.documentElement.clientHeight
   );
 }
-var timeToSleep = 200;
+var timeToSleep = 100;
 var canvas;
 var width;
 var height;
@@ -37,8 +37,6 @@ function setup() {
  
   // Move the canvas so it’s inside our <div id="sketch-holder">.
   canvas.parent('sketch-holder');
-
-  background("#ffcdd2");
   
 }
 
@@ -51,7 +49,7 @@ document.addEventListener("keydown", function(e) {
 var runAlgorithm = false;
 var listBall;
 var convexHull;
-var radius = 10;
+var radius = 15;
 var numberOfBalls;
 var ctx;
 var listSortedPoint=[];
@@ -61,7 +59,6 @@ var runGrahamaScan = async function() {
   runAlgorithm = true;
   listBall = [];
   convexHull = [];
-  radius = 10;
   numberOfBalls = Math.floor(Math.random() * 50) + 50
   // numberOfBalls = 10;
   ctx = canvas.getContext("2d");
@@ -118,23 +115,36 @@ var dotProduct = function(ball, startPoint) {
 var drawCanvas = async function() {
   clearCanvas();
   drawCircle();
-  drawTest();
+  // drawTest();
   drawConvexHull()
   await sleep(timeToSleep);
 };
 var drawCircle = function() {
-  for (let i = 0; i < numberOfBalls; i++) {
-    if (listBall[i] == currentVertex) {
-      ctx.fillStyle = " #3385ff";
-    } else {
-      ctx.fillStyle = "#33cc33";
+   noStroke();
+
+  for (let i = 0; i < numberOfBalls; i++){
+    if (listBall[i] == currentVertex){
+      let c = color(255, 204, 0); // Define color 'c'
+      fill(c); // Use color variable 'c' as fill color
+      noStroke(); // Don't draw a stroke around shapes
+      // noStroke(); // Don't draw a stroke around shapes      
+      circle(listBall[i].x, listBall[i].y,radius);
+      // ctx.fillStyle = ' #3385ff'
     }
-    ctx.beginPath();
-    ctx.arc(listBall[i].x, listBall[i].y, radius, 0, 2 * Math.PI);
-    //ctx.fillStyle = 'green'
-    ctx.fill();
-    ctx.stroke();
+    else {
+      let c = color("#33cc33"); // Define color 'c'
+      fill(c); // Use color variable 'c' as fill color
+      // noStroke(); // Don't draw a stroke around shapes      
+      circle(listBall[i].x, listBall[i].y,radius);
+    }
   }
+  for(let i=0;i<convexHull.length;i++){
+    let c = color("#039be5"); // Define color 'c'
+    fill(c); // Use color variable 'c' as fill color
+    noStroke(); // Don't draw a stroke around shapes      
+    circle(convexHull[i].x, convexHull[i].y,radius);
+  }
+
 };
 
 var drawTest = function() {
@@ -145,29 +155,22 @@ var drawTest = function() {
 };
 
 var drawConvexHull = function() {
-  ctx.beginPath();
-  ctx.moveTo(convexHull[0].x, convexHull[0].y);
+  beginShape();
+  let c= color('rgba(179, 229, 252, 0.5)');
+  fill(c);
+  strokeWeight(2);
+  stroke("#039be5");
+  vertex(convexHull[0].x,convexHull[0].y);
   for (let i = 1; i < convexHull.length; i++) {
-    ctx.fillStyle = "black";
-
-    ctx.lineTo(convexHull[i].x, convexHull[i].y);
-    // ctx.moveTo(convexHull[i].x+radius, convexHull[i].y);
-    // ctx.fillStyle = "red";
-    ctx.arc(convexHull[i].x, convexHull[i].y, radius, 0, 2 * Math.PI);
-    // ctx.fill();
-    // ctx.lineTo(convexHull[i].x, convexHull[i].y);
-
+    vertex(convexHull[i].x, convexHull[i].y)
   }
-  ctx.lineTo(convexHull[0].x, convexHull[0].y);
-  ctx.fill();
-  // ctx.stroke();
+  vertex(convexHull[0].x,convexHull[0].y);
 
-  
+endShape();
 };
 
 var drawResult = function() {
-  console.log("redraw final");
-  drawTest();
+  // drawTest();
   clearCanvas();
   drawCircle();
   drawConvexHull(convexHull);

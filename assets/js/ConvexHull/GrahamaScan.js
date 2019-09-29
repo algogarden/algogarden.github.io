@@ -38,7 +38,7 @@ class GrahamaScan{
 
      findMostUnderLeftPoint(){
         for (let i = 0; i < this.instance.numberOfBall; i++) {
-            if (this.startPoint && this.instance.listBall.y > this.instance.listBall[this.startPoint].y) {
+            if (this.startPoint && this.instance.listBall[i].y > this.instance.listBall[this.startPoint].y) {
                 this.startPoint = i;
             } else if (this.startPoint
                  && this.instance.listBall[i].x < this.instance.listBall[this.startPoint].x
@@ -73,7 +73,7 @@ class GrahamaScan{
     init(){
         this.findMostUnderLeftPoint();
         this.calculateAndSort();
-        this.convexHull.push(this.startPoint);  
+        this.convexHull.push(this.instance.listBall[this.startPoint]);  
         this.convexHull.push(this.instance.listBall[this.listSortedPoint[0].index]);
         this.count=0;
     }
@@ -101,5 +101,7 @@ class GrahamaScan{
             this.convexHull.push(this.instance.listBall[this.listSortedPoint[i].index]);
             this.count++;
         }
+        console.log("convexHull ");
+        console.log(this.convexHull)
     }
 }

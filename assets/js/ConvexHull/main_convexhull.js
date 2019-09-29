@@ -69,13 +69,12 @@ function startSketch(board,instance){
     };
     
     p.draw = function() {
-      console.log(board);
       if(!board.Stop()){
+        p.clear();
         board.drawCircle(p);
         board.drawconvexHull(p);
       }
       else{
-        console.log(board);
         p.noLoop();
       }
     };
@@ -87,6 +86,6 @@ window.addEventListener("load", function() {
     // canvas = document.getElementById("sketch-holder");
     // setup();
     // canvas.width = width;
-    // canvas.height = height;
+    // canvas.height = height;  
     generateWorld();
   });

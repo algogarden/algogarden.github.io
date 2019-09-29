@@ -42,7 +42,7 @@ class Board{
       p.beginShape();
       let c= p.color('rgba(179, 229, 252, 0.5)');
       p.fill(c);
-      p.strokeWeight(2);
+      p.strokeWeight(0.5);
       p.stroke("#039be5");
       p.vertex(this.algorithm.convexHull[0].x,this.algorithm.convexHull[0].y);
       for (let i = 1; i < this.algorithm.convexHull.length; i++) {

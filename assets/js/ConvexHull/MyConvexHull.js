@@ -12,8 +12,6 @@ export default class ConvexHull{
         this.ctx = this.canvas.getContext("2d");
         this.leftMost;
         this.currentVertex;
-
-        
     }
 
     getWidth() {

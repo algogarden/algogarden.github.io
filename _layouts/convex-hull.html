@@ -45,11 +45,9 @@
 				<div class="col-md-4 card-container">
 					<div class="card card-flip">
 						<div class="front card-block">
-							<!-- To add FontAwesome Icons use Unicode characters and to set size use font-size instead of fa-*x because when calculating the height (see js), the size of the icon is not calculated if using classes -->
-							<span class="card-img-top fa " style="font-size: 4em"><span class="ti-github"></span></span>
-							<h4 class="card-title">Front Title</h4>
-							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
-							<p class="card-text">Front Text</p>
+							<div id="sketch-holder-1">
+								<!-- Our sketch will go here! -->
+							  </div>
 						</div>
 						<div class="back card-block">
 							<p>
@@ -68,10 +66,9 @@
 				<div class="col-md-4 card-container">
 					<div class="card card-flip">
 						<div class="front card-block">
-							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
-							<h4 class="card-title">Front Title</h4>
-							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
-							<p class="card-text">Front Text</p>
+							<div id="sketch-holder-2">
+								<!-- Our sketch will go here! -->
+							  </div>
 						</div>
 						<div class="back card-block">
 							<p>Some example short text</p>
@@ -145,8 +142,10 @@
 				</div>
 			</div>
 		</div>
-		<canvas id="world"></canvas>
-	</section>
+		
+		  <!-- <div id="sketch-holder">
+		  </div>	 -->
+		</section>
 	<!-- End of page head section
 		============================================= -->
 
@@ -192,6 +191,7 @@
 	<script src="{{ 'assets/js/waypoints.min.js' | relative_url }}"></script>
 
 
+	<script type="text/javascript" src="{{ 'assets/js/p5.min.js' | relative_url}}"></script>
 
 	<!-- Include script.js -->
 	<script src="{{ 'assets/js/script.js' | relative_url }}"></script>
@@ -199,7 +199,14 @@
 	<script src="{{ 'assets/custom.js' | relative_url }}"></script>
 
 	<script src="{{ 'assets/js/convex_hull.js' | relative_url }}"></script>
-	<script type="module" src="{{ 'assets/js/ConvexHull/quick-hull.js' | relative_url}}"></script>
+	<!-- <script type="module" src="{{ 'assets/js/ConvexHull/quick-hull.js' | relative_url}}"></script> -->
+	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/GrahamaScan.js' | relative_url}}"></script>
+	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/World.js' | relative_url}}"></script>
+	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/Board.js' | relative_url}}"></script>
+	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/BoardManager.js' | relative_url}}"></script>
+
+	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/main_convexhull.js' | relative_url}}"></script>
+	<script  src="{{ 'assets/js/grahama-scan.js' | relative_url}}"></script>
 
 </body>
 

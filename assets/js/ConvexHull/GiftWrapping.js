@@ -1,68 +1,57 @@
-import MyConvexHull from './MyConvexHull.js'
+class GiftWrapping {
+  constructor() {
+    this.instance = Singleton.Instance();
+    this.leftMost = null;
+    this.currentVertex;
+    this.nextVertex;
+    this.index;
+    this.convexHull = [];
+    this.finish = false;
+  }
 
-export default class GiftWrapping extends MyConvexHull{
-    constructor(sleepTime, cv, r){
-        super(sleepTime, cv, r)
+  init() {
+    this.findLeftMost();
+    console.log("leftMost", this.leftMost);
+
+    this.currentVertex = this.leftMost;
+    this.nextVertex = this.instance.listBall[0];
+    this.index = 1;
+    this.convexHull.push(this.leftMost);
+  }
+
+  findLeftMost() {
+    for (let ball of this.instance.listBall) {
+      if (this.leftMost && ball.x < this.leftMost.x) this.leftMost = ball;
+      else if (!this.leftMost) this.leftMost = ball;
     }
+  }
 
-    generateBalls(){
-        for (let i = 0; i < this.numberOfBalls; i++) {
-        let ball = {
-            x: Math.floor(Math.random() * (this.canvas.width - 4 * this.radius)) + this.radius,
-            y: Math.floor(Math.random() * (this.canvas.height - 15 * this.radius)) + 105 + this.radius
-        };
-        if (this.leftMost && ball.x < this.leftMost.x) this.leftMost = ball;
-        else if (!this.leftMost) this.leftMost = ball;
-        this.listBall.push(ball);
-        }
+  run() {
+    let checking = this.instance.listBall[this.index];
+
+    if (this.crossProduct(this.currentVertex, this.nextVertex, checking) < 0) {
+      this.nextVertex = checking;
     }
-
-    async runConvexHull(){
-        this.initBeforeRunAlgorithm()
-
-        this.leftMost = null
-
-        this.generateBalls()
-
-        this.currentVertex = this.leftMost
-        
-        let nextVertex = this.listBall[0]
-        let index = 1
-        this.convexHull.push(this.leftMost)
-  
-        for (index; ; ){
-            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            let checking = this.listBall[index]
-            //console.log('redraw')
-            this.drawCanvas(0)
-            this.ctx.beginPath()
-            this.ctx.moveTo(this.currentVertex.x, this.currentVertex.y)
-            this.ctx.lineTo(nextVertex.x, nextVertex.y)
-            this.ctx.moveTo(this.currentVertex.x, this.currentVertex.y)
-            this.ctx.lineTo(checking.x, checking.y)
-            this.ctx.stroke()
-            
-            //console.log('cross: ', cross)
-            if (this.crossProduct(this.currentVertex, nextVertex, checking) < 0){
-            //console.log("lest than 0")
-                nextVertex = checking
-            }
-            index++
-            if (index == this.numberOfBalls){
-            if (nextVertex == this.leftMost){
-                break
-            }
-            else{
-                this.convexHull.push(nextVertex)
-                this.currentVertex = nextVertex
-                index = 0
-                nextVertex = this.leftMost
-                //console.log(convexHull)
-            }
-            }
-            await this.sleep(this.timeToSleep)
-        }
-        this.drawCanvas(0)
-        this.runAlgorithm = false
+    this.index++;
+    if (this.index == this.instance.numberOfBall) {
+      if (this.nextVertex == this.leftMost) {
+        this.finish = true;
+      } else {
+        this.convexHull.push(this.nextVertex);
+        this.currentVertex = this.nextVertex;
+        this.index = 0;
+        this.nextVertex = this.leftMost;
+      }
     }
+  }
+
+  crossProduct(a, b, c) {
+    let vector1 = { x: b.x - a.x, y: b.y - a.y };
+    let vector2 = { x: c.x - a.x, y: c.y - a.y };
+    return vector1.x * vector2.y - vector1.y * vector2.x;
+  }
+
+  stop() {
+    return this.finish;
+  }
 }

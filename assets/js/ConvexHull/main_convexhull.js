@@ -1,3 +1,5 @@
+//import GiftWrapping from "./GiftWrapping";
+
 // import BoardManager from "./BoardManager.js";
 // import World from "./World.js"
 var Singleton = (function() {
@@ -8,7 +10,7 @@ var Singleton = (function() {
       return object;
   }
   return { // public interface
-    getInstance: function (numberOfBall = 20,radius = 15) {
+    Instance: function (numberOfBall = 20,radius = 15) {
       if (!instance) {
           instance = createInstance(numberOfBall,radius);
       }
@@ -37,20 +39,20 @@ function getHeight() {
 }
 
 function generateWorld(){
-    var instance = Singleton.getInstance(100,5);
+    Singleton.Instance(50,5); //number of points and radius
 
     // var instance1 = Singleton.getInstance(1,20,15);
     var boardManager= new BoardManager();
     // debugger;
-    boardManager.addBoard(50,"sketch-holder-1",new GrahamaScan());
-    boardManager.addBoard(50,"sketch-holder-2",new GrahamaScan());
+    boardManager.addBoard("sketch-holder-1",new GrahamScan());
+    boardManager.addBoard("sketch-holder-2",new GiftWrapping());
     for(var i=0;i<boardManager.pool;i++){
       boardManager.listBoard[i].init();
-      startSketch(boardManager.listBoard[i],instance);
+      startSketch(boardManager.listBoard[i]);
     }
   }
 
-function startSketch(board,instance){
+function startSketch(board){
   // var board=board;
   // var instance=instance;
   var sketch = function( p ) {

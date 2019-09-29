@@ -1,25 +1,13 @@
 
 class Board{
-    constructor(sleepTime, id_skate_holder,algorithm){
-        this.sleepTime=sleepTime;
+    constructor(id_skate_holder,algorithm){
         var front = document.getElementsByClassName("front");
         this.width = front[0].offsetWidth;
         this.height =front[0].offsetHeight;
         this.id_skate_holder=id_skate_holder;
-        this.instance=Singleton.getInstance();
+        this.instance=Singleton.Instance();
         this.algorithm=algorithm;
     }
-
-    // DrawCanvas(){
-    //     clear();
-    //     drawCircle();
-    //     drawConvexHull()
-    //     sleep(timeToSleep);
-    // }
-
-    //  sleep (milliseconds) {
-    //     return new Promise(resolve => setTimeout(resolve, milliseconds));
-    // };
 
     drawCircle(p) {
         p.noStroke();
@@ -48,8 +36,7 @@ class Board{
       for (let i = 1; i < this.algorithm.convexHull.length; i++) {
         p.vertex(this.algorithm.convexHull[i].x, this.algorithm.convexHull[i].y)
       }
-      p.vertex(this.algorithm.convexHull[0].x,this.algorithm.convexHull[0].y);
-      p.endShape();
+      p.endShape(p.CLOSE);
    };
    
     

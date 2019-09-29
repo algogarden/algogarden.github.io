@@ -11,7 +11,10 @@ export default class MonotoneChain extends MyConvexHull{
         this.generateBalls()
 
         this.listBall.sort(function(a, b){
-            return a.x < b.x || (a.x == b.x && a.y < b.y)
+            if (a.x != b.x)
+  	            return a.x - b.x
+            else
+                return a.y - b.y
         })
 
         console.log(this.listBall)

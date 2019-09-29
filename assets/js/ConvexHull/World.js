@@ -2,10 +2,10 @@
 
 class World{
 
-    constructor(pool, numberOfBall,radius) {
-        this.pool = pool;
+    constructor(numberOfBall,radius) {
+        //this.pool = pool;
         this.numberOfBall = numberOfBall;
-        this.radius=5;
+        this.radius = radius;
         this.listBall=[];
         var front = document.getElementsByClassName("front");
         var width = front[0].offsetWidth;

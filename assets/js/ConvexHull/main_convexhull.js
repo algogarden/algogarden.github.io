@@ -3,20 +3,14 @@
 var Singleton = (function() {
   var instance = null;
   
-  function createInstance(pool, numberOfBall,radius) {
-      var object = new World(pool, numberOfBall,radius);
+  function createInstance(numberOfBall,radius) {
+      var object = new World(numberOfBall,radius);
       return object;
   }
   return { // public interface
-    getInstance: function (pool, numberOfBall,radius) {
+    getInstance: function (numberOfBall = 20,radius = 15) {
       if (!instance) {
-          instance = createInstance(pool, numberOfBall,radius);
-      }
-      return instance;
-    },
-    getInstance: function () {
-      if (!instance) {
-          instance = createInstance(1,20,15);
+          instance = createInstance(numberOfBall,radius);
       }
       return instance;
     }
@@ -43,13 +37,13 @@ function getHeight() {
 }
 
 function generateWorld(){
-    var instance = Singleton.getInstance(1,25,5);
+    var instance = Singleton.getInstance(100,5);
 
     // var instance1 = Singleton.getInstance(1,20,15);
     var boardManager= new BoardManager();
     // debugger;
     boardManager.addBoard(50,"sketch-holder-1",new GrahamaScan());
-    // boardManager.addBoard(50,"sketch-holder-2",new GrahamaScan());
+    boardManager.addBoard(50,"sketch-holder-2",new GrahamaScan());
     for(var i=0;i<boardManager.pool;i++){
       boardManager.listBoard[i].init();
       startSketch(boardManager.listBoard[i],instance);

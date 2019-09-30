@@ -118,6 +118,7 @@ class GrahamScan extends Algorithm{
         ) > 0
       ) {
         this.convexHull.pop();
+        return;
       }
       this.convexHull.push(
         this.instance.listBall[this.listSortedPoint[i].index]

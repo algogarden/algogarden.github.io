@@ -51,15 +51,24 @@ class QuickHull extends Algorithm {
         }
       }
     }
-    let data1 = { arr: S1, left: this.leftMost, right: this.rightMost };
-    let data2 = { arr: S2, left: this.rightMost, right: this.leftMost };
+    let data1 = {
+      arr: S1,
+      left: this.leftMost,
+      right: this.rightMost,
+      side: "left"
+    };
+    let data2 = {
+      arr: S2,
+      left: this.rightMost,
+      right: this.leftMost,
+      side: "right"
+    };
     this.stack.push(data2);
     this.stack.push(data1);
   }
 
   run() {
     let S = this.stack.pop();
-    console.log("S", S);
     if (S.arr.length != 0) {
       let farthest;
       let farthestDistance = 0;
@@ -72,87 +81,26 @@ class QuickHull extends Algorithm {
       }
 
       this.convexHull.push(farthest);
+      // if (S.side == "left") {
+      //   this.convexHull.slice(1, 0, farthest);
+      // } else {
+      //   this.convexHull.push(farthest);
+      // }
 
       let S1 = [];
       let S2 = [];
       for (let i = 0; i < S.arr.length; i++) {
-        console.log("left, farthest, arr[i]", S.left, farthest, S.arr[i], i);
         if (this.crossProduct(S.left, farthest, S.arr[i]) < 0) {
           S1.push(S.arr[i]);
         } else if (this.crossProduct(farthest, S.right, S.arr[i]) < 0) {
           S2.push(S.arr[i]);
         }
       }
-      let data1 = { arr: S1, left: S.left, right: farthest };
-      let data2 = { arr: S2, left: farthest, right: S.right };
+      let data1 = { arr: S1, left: S.left, right: farthest, side: "left" };
+      let data2 = { arr: S2, left: farthest, right: S.right, side: "right" };
       this.stack.push(data2);
       this.stack.push(data1);
     }
-  }
-
-  async runConvexHull() {
-    this.initBeforeRunAlgorithm();
-
-    this.leftMost = null;
-    this.rightMost = null;
-
-    this.generateBalls();
-
-    this.convexHull.push(this.leftMost);
-    await this.drawCanvas();
-
-    for (let i = 0; i < this.numberOfBalls; i++) {
-      if (
-        this.listBall[i] != this.leftMost &&
-        this.listBall[i] != this.rightMost
-      ) {
-        if (
-          this.crossProduct(this.leftMost, this.rightMost, this.listBall[i]) < 0
-        ) {
-          S1.push(this.listBall[i]);
-        } else {
-          S2.push(this.listBall[i]);
-        }
-      }
-    }
-
-    await this.quickHull(S1, this.leftMost, this.rightMost);
-
-    this.convexHull.push(this.rightMost);
-    await this.drawCanvas();
-
-    await this.quickHull(S2, this.rightMost, this.leftMost);
-
-    this.runAlgorithm = false;
-  }
-
-  async quickHull(S, A, B, run) {
-    if (S.length == 0) return;
-    let farthest;
-    let farthestDistance = 0;
-    for (let i = 0; i < S.length; i++) {
-      let temp = this.heightSquare(A, B, S[i]);
-      if (temp > farthestDistance) {
-        farthest = S[i];
-        farthestDistance = temp;
-      }
-    }
-
-    let S1 = [];
-    let S2 = [];
-    for (let i = 0; i < S.length; i++) {
-      if (this.crossProduct(A, farthest, S[i]) < 0) {
-        S1.push(S[i]);
-      } else if (this.crossProduct(farthest, B, S[i]) < 0) {
-        S2.push(S[i]);
-      }
-    }
-
-    this.quickHull(S1, A, farthest);
-
-    this.convexHull.push(farthest);
-
-    this.quickHull(S2, farthest, B);
   }
 
   stop() {

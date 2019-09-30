@@ -17,6 +17,6 @@ export default class MonotoneChain extends MyConvexHull{
                 return a.y - b.y
         })
 
-        console.log(this.listBall)
+        // console.log(this.listBall)
     }
 }

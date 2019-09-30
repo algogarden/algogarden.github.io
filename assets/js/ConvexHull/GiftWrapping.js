@@ -1,5 +1,6 @@
-class GiftWrapping {
+class GiftWrapping extends Algorithm{
   constructor() {
+    super();
     this.instance = Singleton.Instance();
     this.leftMost = null;
     this.currentVertex;

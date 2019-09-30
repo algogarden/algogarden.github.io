@@ -44,39 +44,13 @@ function generateWorld(){
     // var instance1 = Singleton.getInstance(1,20,15);
     var boardManager= new BoardManager();
     // debugger;
-    boardManager.addBoard("sketch-holder-1",new GrahamScan());
-    boardManager.addBoard("sketch-holder-2",new GiftWrapping());
+    boardManager.addBoard("sketch-holder-1",new GiftWrapping());
+    boardManager.addBoard("sketch-holder-2",new GrahamScan());
     for(var i=0;i<boardManager.pool;i++){
-      boardManager.listBoard[i].init();
-      startSketch(boardManager.listBoard[i]);
-    }
+      console.log("123");
+      boardManager.listBoard[i].run(boardManager.listBoard[i].algorithm)
+      }
   }
-
-function startSketch(board){
-  // var board=board;
-  // var instance=instance;
-  var sketch = function( p ) {
-    
-    p.setup = function() {
-      var canvas=p.createCanvas(board.width, board.height);
-      canvas.parent(board.id_skate_holder);
-      p.background("#e3f2fd");
-      p.frameRate(30);
-    };
-    
-    p.draw = function() {
-      if(!board.Stop()){
-        p.clear();
-        board.drawCircle(p);
-        board.drawconvexHull(p);
-      }
-      else{
-        p.noLoop();
-      }
-    };
-  };
-  var myp5 = new p5(sketch);
-}
 
 window.addEventListener("load", function() {
     // canvas = document.getElementById("sketch-holder");

@@ -40,8 +40,32 @@ class Board{
    };
    
     
-    run(){
-      this.algorithm.run();
+    run(algorithm){
+      // this.algorithm.run();
+      let width=this.width;
+      let height=this.height
+      new p5(function( p ) {
+    
+        p.setup = function() {
+          p.createCanvas(width,height);
+          // canvas.parent(this.id_skate_holder);
+          algorithm.init();
+          p.background("#e3f2fd");
+          p.frameRate(30);
+        };
+        
+        p.draw = function() {
+          if(!algorithm.stop()){
+            algorithm.run()
+            p.clear();
+            algorithm.drawCircle(p);
+            algorithm.drawconvexHull(p);
+          }
+          else{
+            p.noLoop();
+          }
+        };
+      },this.id_skate_holder);
     }
     init(){
       this.algorithm.init();

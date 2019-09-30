@@ -4,15 +4,16 @@
 // import World from "./World.js"
 var Singleton = (function() {
   var instance = null;
-  
-  function createInstance(numberOfBall,radius) {
-      var object = new World(numberOfBall,radius);
-      return object;
+
+  function createInstance(numberOfBall, radius) {
+    var object = new World(numberOfBall, radius);
+    return object;
   }
-  return { // public interface
-    Instance: function (numberOfBall = 20,radius = 15) {
+  return {
+    // public interface
+    Instance: function(numberOfBall = 20, radius = 15) {
       if (!instance) {
-          instance = createInstance(numberOfBall,radius);
+        instance = createInstance(numberOfBall, radius);
       }
       return instance;
     }
@@ -38,23 +39,24 @@ function getHeight() {
   );
 }
 
-function generateWorld(){
-    Singleton.Instance(50,5); //number of points and radius
+function generateWorld() {
+  Singleton.Instance(50, 5); //number of points and radius
 
-    // var instance1 = Singleton.getInstance(1,20,15);
-    var boardManager= new BoardManager();
-    // debugger;
-    boardManager.addBoard("sketch-holder-1",new GiftWrapping());
-    boardManager.addBoard("sketch-holder-2",new GrahamScan());
-    for(var i=0;i<boardManager.pool;i++){
-      boardManager.listBoard[i].run()
-      }
+  // var instance1 = Singleton.getInstance(1,20,15);
+  var boardManager = new BoardManager();
+  // debugger;
+  boardManager.addBoard("sketch-holder-1", new GiftWrapping());
+  boardManager.addBoard("sketch-holder-2", new GrahamScan());
+  boardManager.addBoard("sketch-holder-3", new QuickHull());
+  for (var i = 0; i < boardManager.pool; i++) {
+    boardManager.listBoard[i].run();
   }
+}
 
 window.addEventListener("load", function() {
-    // canvas = document.getElementById("sketch-holder");
-    // setup();
-    // canvas.width = width;
-    // canvas.height = height;  
-    generateWorld();
-  });
+  // canvas = document.getElementById("sketch-holder");
+  // setup();
+  // canvas.width = width;
+  // canvas.height = height;
+  generateWorld();
+});

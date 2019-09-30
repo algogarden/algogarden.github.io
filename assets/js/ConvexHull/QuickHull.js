@@ -1,5 +1,6 @@
-class QuickHull {
+class QuickHull extends Algorithm {
   constructor() {
+    super();
     this.instance = Singleton.Instance();
     this.leftMost = null;
     this.rightMost = null;

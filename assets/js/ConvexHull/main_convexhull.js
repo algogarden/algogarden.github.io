@@ -47,8 +47,7 @@ function generateWorld(){
     boardManager.addBoard("sketch-holder-1",new GiftWrapping());
     boardManager.addBoard("sketch-holder-2",new GrahamScan());
     for(var i=0;i<boardManager.pool;i++){
-      console.log("123");
-      boardManager.listBoard[i].run(boardManager.listBoard[i].algorithm)
+      boardManager.listBoard[i].run()
       }
   }
 

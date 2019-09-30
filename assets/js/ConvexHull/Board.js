@@ -40,10 +40,11 @@ class Board{
    };
    
     
-    run(algorithm){
+    run(){
       // this.algorithm.run();
       let width=this.width;
       let height=this.height
+      let algorithm=this.algorithm;
       new p5(function( p ) {
     
         p.setup = function() {

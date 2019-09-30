@@ -55,13 +55,15 @@ class QuickHull extends Algorithm {
       arr: S1,
       left: this.leftMost,
       right: this.rightMost,
-      side: "left"
+      side: "left",
+      parent: this.rightMost.id
     };
     let data2 = {
       arr: S2,
       left: this.rightMost,
       right: this.leftMost,
-      side: "right"
+      side: "right",
+      parent: this.rightMost.id
     };
     this.stack.push(data2);
     this.stack.push(data1);
@@ -80,12 +82,7 @@ class QuickHull extends Algorithm {
         }
       }
 
-      this.convexHull.push(farthest);
-      // if (S.side == "left") {
-      //   this.convexHull.slice(1, 0, farthest);
-      // } else {
-      //   this.convexHull.push(farthest);
-      // }
+      this.insertToConvexHull(S, farthest);
 
       let S1 = [];
       let S2 = [];
@@ -96,8 +93,20 @@ class QuickHull extends Algorithm {
           S2.push(S.arr[i]);
         }
       }
-      let data1 = { arr: S1, left: S.left, right: farthest, side: "left" };
-      let data2 = { arr: S2, left: farthest, right: S.right, side: "right" };
+      let data1 = {
+        arr: S1,
+        left: S.left,
+        right: farthest,
+        side: "left",
+        parent: farthest.id
+      };
+      let data2 = {
+        arr: S2,
+        left: farthest,
+        right: S.right,
+        side: "right",
+        parent: farthest.id
+      };
       this.stack.push(data2);
       this.stack.push(data1);
     }
@@ -120,5 +129,19 @@ class QuickHull extends Algorithm {
     let vector1 = { x: b.x - a.x, y: b.y - a.y };
     let vector2 = { x: c.x - a.x, y: c.y - a.y };
     return vector1.x * vector2.y - vector1.y * vector2.x;
+  }
+
+  insertToConvexHull(S, farthest) {
+    for (let i = 0; i < this.convexHull.length; i++) {
+      if (S.parent == this.convexHull[i].id) {
+        if (S.side == "left") {
+          this.convexHull.splice(i, 0, farthest);
+          return;
+        } else {
+          this.convexHull.splice(i + 1, 0, farthest);
+          return;
+        }
+      }
+    }
   }
 }

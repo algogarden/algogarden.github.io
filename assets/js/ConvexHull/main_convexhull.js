@@ -40,7 +40,7 @@ function getHeight() {
 }
 
 function generateWorld() {
-  Singleton.Instance(100, 5); //number of points and radius
+  Singleton.Instance(1000, 5); //number of points and radius
 
   // var instance1 = Singleton.getInstance(1,20,15);
   var boardManager = new BoardManager();

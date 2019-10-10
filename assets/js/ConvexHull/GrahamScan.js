@@ -6,6 +6,7 @@ class GrahamScan extends Algorithm{
     this.convexHull = [];
     this.listSortedPoint = [];
     this.count = 0;
+    this.name="GrahamScan";
   }
 
   Heapify(index, sizeHeap) {

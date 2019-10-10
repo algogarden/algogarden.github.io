@@ -123,5 +123,10 @@
   
   /* .card-container:hover .card-flip {
     transform: rotateY(180deg);
+  } */
+  .do-flip {
+    -o-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
-   */

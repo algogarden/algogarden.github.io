@@ -1,5 +1,5 @@
 class Board {
-  constructor(id_skate_holder, algorithm) {
+  constructor(id_skate_holder, algorithm,name) {
     var front = document.getElementsByClassName("front");
     this.width = front[0].offsetWidth;
     this.height = front[0].offsetHeight;
@@ -51,6 +51,7 @@ class Board {
     let width = this.width;
     let height = this.height;
     let algorithm = this.algorithm;
+    let id=this.id_skate_holder;
     new p5(function(p) {
       p.setup = function() {
         p.createCanvas(width, height);
@@ -67,7 +68,17 @@ class Board {
           algorithm.drawCircle(p);
           algorithm.drawconvexHull(p);
         } else {
+          // $("#"+id).parent().parent().parent().css("transform", "rotateY(180deg)");
           p.noLoop();
+          $("#"+id).parent().parent().hover(function(){
+            $( this ).addClass( "do-flip" );
+          }, function() {
+            $( this ).removeClass( "do-flip" );
+          });
+          $("#"+id).trigger('mouseenter');
+          var child = "<p style=\"color:#2196f3\">"+algorithm.name+"</p>";
+          console.log($("#"+id+"-back"));
+          $("#"+id+"-back").empty().html(child);
         }
       };
     }, this.id_skate_holder);

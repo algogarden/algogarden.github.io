@@ -8,6 +8,8 @@ class GiftWrapping extends Algorithm{
     this.index;
     this.convexHull = [];
     this.finish = false;
+    this.name="GrahamScan";
+
   }
 
   init() {

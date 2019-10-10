@@ -11,6 +11,8 @@ class QuickHull extends Algorithm {
     this.stack = [];
     this.S = null;
     this.finish = false;
+    this.name="QuickHull";
+
   }
 
   findLeftMostRightMost() {

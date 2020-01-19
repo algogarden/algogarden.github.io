@@ -228,9 +228,9 @@ Margin setting
 Start of Page head section [*3]
 -------------------------------------------------------------------------*/
 .page-head-section {
-	background-image: url(../img/banner/banner-1.jpg);
+	background-image: url(../img/banner/background_garden.jpg);
 	padding-bottom: 420px;
-	background-position: 50% 0%;
+	background-position: 50% 30%;
 	position: relative;
 	background-repeat: no-repeat;
 	overflow: visible;
@@ -240,7 +240,7 @@ Start of Page head section [*3]
 .page-head-overlay,
 .page-head-overlay-2 {
 	background-color: rgb(249, 249, 249);
-	opacity: 0.90;
+	opacity: 0.70;
 	position: absolute;
 	top: 0;
 	height: 100%;
@@ -438,7 +438,7 @@ button.tab-button.active {
 	top: 0;
 	left: 0;
 	opacity: 0;
-	transition: all 0.3s ease;
+	transition: all 0.2s ease;
 }
 .work-item:after {
 	position: absolute;
@@ -449,7 +449,7 @@ button.tab-button.active {
 	bottom: 0;
 	right: 0;
 	opacity: 0;
-	transition: all 0.2s ease;
+	transition: all 0.1s ease;
 	transition-delay: 0.2s;
 }
 .work-item:hover::before,
@@ -523,7 +523,7 @@ button.tab-button.active {
 	opacity: 1;
 	visibility: visible;
 	right: 15px;
-	transition-delay: 1.2s;
+	transition-delay: 0.5s;
 }
 .more-btn,
 .contact-adress-form button {

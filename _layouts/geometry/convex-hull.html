@@ -3,6 +3,8 @@
 
 <head>
 	{% include head.html %}
+	<link rel="stylesheet" type="text/css" href="{{ 'assets/css/geometry/convexhull/custom.css' | relative_url }}">
+
 </head>
 
 
@@ -35,116 +37,35 @@
 	</header>
 	<!-- End of header
 		============================================= -->
-
-
-	<!-- Start of page head section
-		============================================= -->
-	<section style="position: relative;top: 100px;background: #e2e1e0;">
-		<!-- Visit https://codepen.io/nicolaskadis/full/brQEOd/ for the latest, no js version! -->
-			<div class="row text-center">
-				<div class="col-md-4 card-container">
-					<div class="card card-flip">
-						<div class="front card-block">
-							<div id="sketch-holder-1">
-								<!-- Our sketch will go here! -->
-							  </div>
-						</div>
-						<div class="back card-block" id="sketch-holder-1-back">
-							<p>
-								Some example text<br> to
-								<br> increase
-								<br> card
-								<br> height
-								<br> to
-								<br> something
-								<br> long
-							</p>
-							<a href="#" class="btn btn-outline-primary">Read More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 card-container">
-					<div class="card card-flip">
-						<div class="front card-block">
-							<div id="sketch-holder-2">
-								<!-- Our sketch will go here! -->
-							  </div>
-						</div>
-						<div class="back card-block" id="sketch-holder-2-back">
-							<p>Some example short text</p>
-							<a href="#" class="btn btn-outline-primary">Read More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 card-container">
-					<div class="card card-flip">
-						<div class="front card-block">
-							<div id="sketch-holder-3">
-								<!-- Our sketch will go here! -->
-							  </div>
-						</div>
-						<div class="back card-block" id="sketch-holder-3-back">
-							<p>Some example text</p>
-							<a href="#" class="btn btn-outline-primary">Read More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 card-container">
-					<div class="card card-flip">
-						<div class="front card-block">
-							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
-							<h4 class="card-title">Front Title</h4>
-							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
-							<p class="card-text">Front Text</p>
-						</div>
-						<div class="back card-block" id="sketch-holder-4-back">
-							<p>
-								Some example text<br> to
-								<br> increase
-								<br> card
-								<br> height
-								<br> to
-								<br> something
-								<br> long
-							</p>
-							<a href="#" class="btn btn-outline-primary">Read More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 card-container">
-					<div class="card card-flip">
-						<div class="front card-block">
-							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
-							<h4 class="card-title">Front Title</h4>
-							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
-							<p class="card-text">Front Text</p>
-						</div>
-						<div class="back card-block">
-							<p>Some example short text</p>
-							<a href="#" class="btn btn-outline-primary">Read More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 card-container">
-					<div class="card card-flip">
-						<div class="front card-block">
-							<span class="card-img-top fa" style="font-size: 4em"><span class="ti-github"></span></span>
-							<h4 class="card-title">Front Title</h4>
-							<h6 class="card-subtitle text-muted">Front Sub-title</h6>
-							<p class="card-text">Front Text</p>
-						</div>
-						<div class="back card-block">
-							<p>Some example text</p>
-							<a href="#" class="btn btn-outline-primary">Read More</a>
-						</div>
+	<section id="portfolio" class="portfolio-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">Quantity</span>
+						<input type="text" class="form-control" placeholder="Quantity of Algorithm"
+							aria-describedby="basic-addon1" id="quantityOfAlgo">
 					</div>
 				</div>
 			</div>
+
+			<div class="row" style="margin-top: 20px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Board Algorithm</h3>
+					</div>
+					<div id="grid" class="row">
+						
+					  </div>
+					  
+				</div>
+			</div>
 		</div>
-		
-		  <!-- <div id="sketch-holder">
-		  </div>	 -->
-		</section>
+	</section>
+	<!-- Start of page head section
+		============================================= -->
+
+
 	<!-- End of page head section
 		============================================= -->
 
@@ -208,7 +129,9 @@
 	<script type="text/javascript" src="{{ 'assets/js/d3.v5.min.js' | relative_url }}"></script>
 
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/main_convexhull.js' | relative_url}}"></script>
-	<script  src="{{ 'assets/js/grahama-scan.js' | relative_url}}"></script>
+	<script src="{{ 'assets/js/grahama-scan.js' | relative_url}}"></script>
+	<script src="{{ 'assets/js/ConvexHull/script.js' | relative_url}}"></script>
+	<script src="https://unpkg.com/isotope-layout@2/dist/isotope.pkgd.min.js"></script>
 
 </body>
 

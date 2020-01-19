@@ -152,10 +152,7 @@ workTab: function (){
     $('.tab-button.active').removeClass('active');
     $(this).addClass('active');
 });
-    var $grid = $('#posts').isotope({
-    	itemSelector: '.item',
-    	percentPosition: true,
-    });
+  
 });
 },
 /* End Of Isotope

@@ -173,7 +173,7 @@ var boardManager;
             }
             if (!redraw) {
               for (var i = 0; i < boardManager.algo; i++) {
-                $("#sketch-holder-" + (i + 1) + " #dropdownMenu1").removeAttr('disabled');
+                $("#sketch-holder-" + (i + 1) + " .dropdown-toggle").removeAttr('disabled');
                 boardManager.addBoard(
                   5,
                   "sketch-holder-" + (i + 1),
@@ -241,7 +241,7 @@ var boardManager;
               boardManager.listBoard[i].play();
             }
             $("input").attr('disabled','disabled');
-            $("#dropdownMenu1").attr('disabled','disabled');
+            $(".dropdown-toggle").attr('disabled','disabled');
 
             $("#showtime .icon .material-icons:first-of-type").css({
               opacity: 0,

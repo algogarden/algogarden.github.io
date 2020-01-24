@@ -1,6 +1,5 @@
-import MyConvexHull from './MyConvexHull.js'
 
-export default class MonotoneChain extends MyConvexHull{
+class MonotoneChain extends Algorithm{
     constructor(sleepTime, cv, r){
         super(sleepTime, cv, r)
     }

@@ -1,7 +1,7 @@
 class QuickHull extends Algorithm {
-  constructor() {
+  constructor(world) {
     super();
-    this.instance = Singleton.Instance();
+    this.instance = world;
     this.leftMost = null;
     this.rightMost = null;
     this.currentVertex;
@@ -14,7 +14,23 @@ class QuickHull extends Algorithm {
     this.name="QuickHull";
 
   }
-
+  refresh() {
+    this.leftMost = null;
+    this.rightMost = null;
+    this.currentVertex;
+    this.nextVertex;
+    this.index;
+    this.convexHull = [];
+    this.stack = [];
+    this.S = null;
+    this.isruning = false;
+    this.finish = false;
+    this.covered_area = 0;
+    this.init();
+  }
+  playMusic() {
+    this.isruning = true;
+  }
   findLeftMostRightMost() {
     for (let ball of this.instance.listBall) {
       if (this.leftMost && ball.x < this.leftMost.x) {
@@ -42,9 +58,10 @@ class QuickHull extends Algorithm {
       ) {
         if (
           this.crossProduct(
+            this.instance.listBall[i],
             this.leftMost,
             this.rightMost,
-            this.instance.listBall[i]
+            
           ) < 0
         ) {
           S1.push(this.instance.listBall[i]);
@@ -69,6 +86,8 @@ class QuickHull extends Algorithm {
     };
     this.stack.push(data2);
     this.stack.push(data1);
+    this.inited=true;
+
   }
 
   run() {
@@ -112,6 +131,106 @@ class QuickHull extends Algorithm {
       this.stack.push(data2);
       this.stack.push(data1);
     }
+    this.covered_area = 0;
+    for (var i = 1; i < this.convexHull.length; i++) {
+      this.covered_area +=
+        (this.convexHull[i - 1].x * this.convexHull[i].y -
+          this.convexHull[i - 1].y * this.convexHull[i].x) /
+        2;
+    }
+    this.covered_area = Math.abs(this.covered_area);
+  }
+
+  draw(p){
+    p.algorithm.run();
+
+    /* - Highlight circle in convexhull
+          ================================================*/
+    for (let i = 0; i < p.algorithm.convexHull.length; i++) {
+      let c = p.color("#212121"); // Define color 'c'
+      p.fill(c); // Use color variable 'c' as fill color
+      p.noStroke(); // Don't draw a stroke around shapes
+      p.circle(
+        p.algorithm.convexHull[i].x,
+        p.algorithm.convexHull[i].y,
+        p.points.radius
+      );
+    }
+    /*================================================*/
+
+    /* - Draw convex hull
+          ================================================*/
+    p.beginShape();
+    let c = p.color("rgba(189, 189, 189, 0.5)");
+    p.fill(c);
+    p.strokeWeight(0.5);
+    p.stroke("#212121");
+    p.vertex(p.algorithm.convexHull[0].x, p.algorithm.convexHull[0].y);
+    for (let i = 1; i < p.algorithm.convexHull.length; i++) {
+      p.vertex(p.algorithm.convexHull[i].x, p.algorithm.convexHull[i].y);
+    }
+    p.endShape(p.CLOSE);
+    /*================================================*/
+
+    /* - Update score
+            ================================================*/
+    $("#" + p.id_skate_holder + " #iteration").text(
+      parseInt($("#" + p.id_skate_holder + " #iteration").text()) + 1
+    );
+    $("#" + p.id_skate_holder + " #pointsinconvexhull").text(
+      p.algorithm.convexHull.length
+    );
+    $("#" + p.id_skate_holder + " #coveredArea").text(p.algorithm.covered_area);
+
+    /*================================================*/
+  }
+
+  drawInitPhase(p){
+    let c = p.color("#212121"); // Define color 'c'
+    p.fill(c); // Use color variable 'c' as fill color
+    p.noStroke(); // Don't draw a stroke around shapes
+    let data1=this.stack[0];
+    let data2=this.stack[1];
+
+    p.circle(
+      data1.left.x, data1.left.y,
+      p.points.radius * 1.5
+    );
+    p.text("Right Most Point",data1.left.x-40, data1.left.y+15);
+    p.circle(
+      data1.right.x, data1.right.y,
+      p.points.radius * 1.5
+    );
+    p.text("Left Most Point",data1.right.x-20, data1.right.y+15);
+    p.beginShape();
+    // let c = p.color("rgba(179, 229, 252, 0.5)");
+    // p.fill(c);
+    p.strokeWeight(0.5);
+    p.stroke("#212121");
+    p.vertex(data1.left.x, data1.left.y);
+    p.vertex(data2.left.x, data2.left.y);
+    p.endShape(p.CLOSE);
+    for (let i = 0; i < data1.arr.length; i++) {
+      let c = p.color("#90a4ae"); // Define color 'c'
+      p.fill(c); // Use color variable 'c' as fill color
+      // noStroke(); // Don't draw a stroke around shapes
+      p.circle(
+        data1.arr[i].x,
+        data1.arr[i].y,
+        p.points.radius
+      );
+      }
+      for (let i = 0; i < data2.arr.length; i++) {
+        let c = p.color("#a1887f"); // Define color 'c'
+        p.fill(c); // Use color variable 'c' as fill color
+        // noStroke(); // Don't draw a stroke around shapes
+        p.circle(
+          data2.arr[i].x,
+          data2.arr[i].y,
+          p.points.radius
+        );
+    }
+
   }
 
   stop() {

@@ -40,12 +40,37 @@
 	<section id="portfolio" class="portfolio-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-3">
 					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1">Quantity</span>
+						<span class="input-group-addon" id="basic-addon1">Board</span>
 						<input type="text" class="form-control" placeholder="Quantity of Algorithm"
 							aria-describedby="basic-addon1" id="quantityOfAlgo">
 					</div>
+				</div>
+				<div class="col-md-4" style="visibility:hidden;" id="visiblePoint">
+					<div class="input-group mb-3">
+						<span class="input-group-addon" id="basic-addon1">Points</span>
+						<input type="text" class="form-control" placeholder="Number of points"
+							aria-describedby="basic-addon1" id="numberOfPoint" aria-describedby="basic-addon2" >
+							<span class="input-group-btn" style="background-color:#777777">
+								<button id="randomPoint" class="btn btn-primary" type="button" style="border-color:#777777;background-color:#777777"><span aria-hidden="true" >
+								</span> Random</button>
+							</span>
+					</div>
+				</div>
+				<div class="col-md-5" style="visibility:hidden;" id="runAlgorithm">
+					<a class="btn btn-default outline" id="showtime" style="position: relative;">
+						<div class="icon">
+							<i class="ti-music material-icons"></i>
+							<i class="ti-trash material-icons"></i>
+						</div>
+						<span class="text">
+						Show time
+					</span>
+						<div class="icon">
+							<i class="ti-music-alt material-icons"></i>
+							<i class="ti-reload material-icons"></i>
+						</div></i></a>
 				</div>
 			</div>
 
@@ -123,6 +148,7 @@
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/GrahamScan.js' | relative_url}}"></script>
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/GiftWrapping.js' | relative_url}}"></script>
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/QuickHull.js' | relative_url}}"></script>
+	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/MonotoneChain.js' | relative_url}}"></script>
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/World.js' | relative_url}}"></script>
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/Board.js' | relative_url}}"></script>
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/BoardManager.js' | relative_url}}"></script>
@@ -131,7 +157,7 @@
 	<script type="text/javascript" src="{{ 'assets/js/ConvexHull/main_convexhull.js' | relative_url}}"></script>
 	<script src="{{ 'assets/js/grahama-scan.js' | relative_url}}"></script>
 	<script src="{{ 'assets/js/ConvexHull/script.js' | relative_url}}"></script>
-	<script src="https://unpkg.com/isotope-layout@2/dist/isotope.pkgd.min.js"></script>
+	<!-- <script src="https://unpkg.com/isotope-layout@2/dist/isotope.pkgd.min.js"></script> -->
 
 </body>
 

@@ -257,7 +257,7 @@ var boardManager;
 
             } else {
               $("input").removeAttr('disabled');
-              $("#dropdownMenu1").removeAttr('disabled');
+              $(".dropdownMenu1").removeAttr('disabled');
               for (var i = 0; i < boardManager.algo; i++) {
                 boardManager.listBoard[i].clean();
               }

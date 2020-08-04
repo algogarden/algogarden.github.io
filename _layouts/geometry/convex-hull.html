@@ -39,51 +39,69 @@
 		============================================= -->
 	<section id="portfolio" class="portfolio-section">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1">Board</span>
-						<input type="text" class="form-control" placeholder="Quantity of Algorithm"
-							aria-describedby="basic-addon1" id="quantityOfAlgo">
-					</div>
-				</div>
-				<div class="col-md-4" style="visibility:hidden;" id="visiblePoint">
-					<div class="input-group mb-3">
-						<span class="input-group-addon" id="basic-addon1">Points</span>
-						<input type="text" class="form-control" placeholder="Number of points"
-							aria-describedby="basic-addon1" id="numberOfPoint" aria-describedby="basic-addon2" >
-							<span class="input-group-btn" style="background-color:#777777">
-								<button id="randomPoint" class="btn btn-primary" type="button" style="border-color:#777777;background-color:#777777"><span aria-hidden="true" >
-								</span> Random</button>
-							</span>
-					</div>
-				</div>
-				<div class="col-md-5" style="visibility:hidden;" id="runAlgorithm">
-					<a class="btn btn-default outline" id="showtime" style="position: relative;">
-						<div class="icon">
-							<i class="ti-music material-icons"></i>
-							<i class="ti-trash material-icons"></i>
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#tab1"><span class="ti-ink-pen"></span> Visualization</a></li>
+				<li><a data-toggle="tab" href="#tab2"><span class="ti-bar-chart"></span> Analytics</a></li>
+				<li><a data-toggle="tab" href="#tab3">Tab 3</a></li>
+			</ul>
+			<div class="tab-content clearfix" style="margin-top:20px;">
+				<div id="tab1" class="tab-pane fade in active">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Board</span>
+								<input type="text" class="form-control" placeholder="Quantity of Algorithm"
+									aria-describedby="basic-addon1" id="quantityOfAlgo">
+							</div>
 						</div>
-						<span class="text">
-						Show time
-					</span>
-						<div class="icon">
-							<i class="ti-music-alt material-icons"></i>
-							<i class="ti-reload material-icons"></i>
-						</div></i></a>
-				</div>
-			</div>
-
-			<div class="row" style="margin-top: 20px;">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Board Algorithm</h3>
+						<div class="col-md-4" style="visibility:hidden;" id="visiblePoint">
+							<div class="input-group mb-3">
+								<span class="input-group-addon" id="basic-addon1">Points</span>
+								<input type="text" class="form-control" placeholder="Number of points"
+									aria-describedby="basic-addon1" id="numberOfPoint" aria-describedby="basic-addon2">
+								<span class="input-group-btn" style="background-color:#777777">
+									<button id="randomPoint" class="btn btn-primary" type="button"
+										style="border-color:#777777;background-color:#777777"><span aria-hidden="true">
+										</span> Random</button>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-5" style="visibility:hidden;" id="runAlgorithm">
+							<a class="btn btn-default outline" id="showtime" style="position: relative;">
+								<div class="icon">
+									<i class="ti-music material-icons"></i>
+									<i class="ti-trash material-icons"></i>
+								</div>
+								<span class="text">
+									Show time
+								</span>
+								<div class="icon">
+									<i class="ti-music-alt material-icons"></i>
+									<i class="ti-reload material-icons"></i>
+								</div></i>
+							</a>
+						</div>
 					</div>
-					<div id="grid" class="row">
-						
-					  </div>
-					  
+
+					<div class="row" style="margin-top: 20px;">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Board Algorithm</h3>
+							</div>
+							<div id="grid" class="row">
+
+							</div>
+						</div>
+					</div>
 				</div>
+				<div id="tab2" class="tab-pane fade">
+					<h3>Tab 2</h3>
+					<p>Content for tab 2.</p>
+				  </div>
+				  <div id="tab3" class="tab-pane fade">
+					<h3>Tab 3</h3>
+					<p>Content for tab 3.</p>
+				  </div>
 			</div>
 		</div>
 	</section>

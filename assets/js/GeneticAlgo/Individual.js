@@ -29,7 +29,7 @@ class Individual {
         point++;
       }
     }
-    this.fitness= (point+0.1) / stadard.length;
+    this.fitness= point / stadard.length;
     return this.fitness;
   }
   

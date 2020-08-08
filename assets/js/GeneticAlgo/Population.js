@@ -4,7 +4,7 @@ class Population {
     this.bestGene = null;
     this.bestScore = 0;
     this.matingPool = Array();
-    this.averageFitness=0;
+    this.averageFitness = 0;
   }
 
   generatingPhase(numberofGene, mutation, target) {
@@ -14,13 +14,13 @@ class Population {
       this.genes[i] = new Individual(target.length, mutation);
     }
     this.target = target;
-    this.averageFitness=0;
+    this.averageFitness = 0;
   }
 
   evaluatingPhase() {
     this.bestGene == null;
     this.bestScore = 0;
-    this.averageFitness=0;
+    this.averageFitness = 0;
     for (let i = 0; i < this.numberofGene; i++) {
       if (this.bestGene == null) {
         this.bestGene = this.genes[i];
@@ -31,15 +31,18 @@ class Population {
           this.bestGene = this.genes[i];
         }
       }
-      this.averageFitness+=(this.genes[i].getFitnessScore(this.target)-0.01);
+      this.averageFitness += this.genes[i].getFitnessScore(this.target);
     }
-    this.averageFitness=this.averageFitness/this.numberofGene;
+    this.averageFitness = this.averageFitness / this.numberofGene;
   }
 
   addToMatingPool() {
     this.matingPool = [];
     for (let i = 0; i < this.numberofGene; i++) {
-      let n = Math.floor(this.genes[i].fitness * 100);
+      let n = 1;
+      if (this.bestScore != 0) {
+        n = Math.floor((this.genes[i].fitness / this.bestScore) * 100);
+      }
       for (let j = 0; j < n; j++) {
         this.matingPool.push(this.genes[i]);
       }

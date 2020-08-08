@@ -13,12 +13,15 @@ function sleep(ms) {
 
 async function gogogo() {
   var pops = new Population();
-  pops.generatingPhase(100, 0.1, "abcdef");
+  let population=$("#quantityOfGens").val();
+  let mutationRate=$("#mutationRate").val();
+  let target=$("#textTarget").val();
+  pops.generatingPhase(population, mutationRate, target);
   let tmp = 1;
-  while (pops.averageFitness < 1) {
+  while (pops.bestScore < 1) {
     pops.evaluatingPhase();
     $("#bestGen").text(pops.bestGene.gene.join(""));
-    $("#bestScore").text((pops.bestScore-0.01).toFixed(3));
+    $("#bestScore").text((pops.bestScore).toFixed(3));
     $("#generations").text(tmp);
     $("#averageFitness").text(pops.averageFitness.toFixed(3));
     $("#all_genes").text(pops.averageFitness.toFixed(3));
@@ -26,8 +29,15 @@ async function gogogo() {
     for (var i = 0; i < 10 && i<pops.genes.length; i++) {
       str+="<h3 class=\"output\">"+pops.genes[i].gene.join("") +"</h3>";
     }
-    $("#all_genes").html(str);
-    if (pops.averageFitness >= 1) {
+    $("#all_genes_1").html(str);
+
+    str="";
+    for (var i = 10; i < 20 && i<pops.genes.length; i++) {
+      str+="<h3 class=\"output\">"+pops.genes[i].gene.join("") +"</h3>";
+    }
+    $("#all_genes_2").html(str);
+
+    if (pops.bestScore >= 1) {
       break;
     }
     pops.addToMatingPool();
@@ -51,6 +61,7 @@ async function gogogo() {
         this.numberOfGens();
         this.mutation();
         this.target();
+        this.showTime();
       },
       /* Start Of Preloader
 ================================================*/
@@ -108,7 +119,6 @@ async function gogogo() {
           } else {
             $("#runAlgorithm").css("visibility", "hidden");
           }
-          gogogo();
         });
       },
       /* End Of Preloader
@@ -130,7 +140,7 @@ async function gogogo() {
               opacity: 1,
               transition: "all 0.3s ease",
             });
-
+            gogogo();
             $("#showtime .text").text("Clean, go!");
           } else {
             $("input").removeAttr("disabled");

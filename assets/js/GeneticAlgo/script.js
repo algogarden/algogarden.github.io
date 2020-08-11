@@ -10,7 +10,7 @@ var boardManager;
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
+var stop=0;
 async function gogogo() {
   var pops = new Population();
   let population=$("#quantityOfGens").val();
@@ -18,7 +18,7 @@ async function gogogo() {
   let target=$("#textTarget").val();
   pops.generatingPhase(population, mutationRate, target);
   let tmp = 1;
-  while (pops.bestScore < 1) {
+  while (pops.bestScore < 1 && stop==0) {
     pops.evaluatingPhase();
     $("#bestGen").text(pops.bestGene.gene.join(""));
     $("#bestScore").text((pops.bestScore).toFixed(3));
@@ -44,6 +44,20 @@ async function gogogo() {
     pops.reproduce();
     tmp++;
     await sleep(50);
+  }
+  if(stop==1){
+    $("#bestGen").text("");
+    $("#bestScore").text("");
+    $("#generations").text("");
+    $("#target").text("");
+    $("#averageFitness").text("");
+    $("#all_genes").text("");
+    $("#mutationRateOutput").text("");
+    $("#textTarget").val("");
+    $("#quantityOfGens").val("");
+    $("#mutationRate").val("");
+    $("#all_genes_1").html("");
+    $("#all_genes_2").html("");
   }
 }
 
@@ -140,6 +154,7 @@ async function gogogo() {
               opacity: 1,
               transition: "all 0.3s ease",
             });
+            stop=0;
             gogogo();
             $("#showtime .text").text("Clean, go!");
           } else {
@@ -154,6 +169,7 @@ async function gogogo() {
               transition: "all 0.3s ease",
             });
             $("#showtime .text").text("Show time");
+            stop=1;
           }
         });
       },

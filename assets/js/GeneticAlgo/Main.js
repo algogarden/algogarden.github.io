@@ -1,7 +1,7 @@
 // var pops=new Population();
-// pops.generatingPhase(100,0.1,"abcdef");
+// pops.generatingPhase(1000,0.01,"abcdef");
 // let tmp=1;
-// while (pops.bestScore<1) {
+// while (tmp<2000) {
 //     // while(tmp<100){
 //     pops.evaluatingPhase();
 //     $("#bestGen").text(pops.bestGene.gene.join(""));

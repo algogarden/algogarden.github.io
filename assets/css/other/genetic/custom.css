@@ -130,3 +130,18 @@
 #grid .errorcode {
   color: white;
 }
+
+.icon {
+  margin: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.icon .material-icons {
+  position: absolute;
+  left: -6px;
+}
+
+.icon .material-icons:last-of-type {
+  opacity: 0;
+}

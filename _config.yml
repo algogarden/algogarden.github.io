@@ -28,4 +28,4 @@ paths:
   life: /categories/life/
   fun: /categories/fun/
   convexhull: /algorithm/geometry/convex-hull/
-  genetic: /algorithm/other/genetic
+  shakespeare: /algorithm/genetic/shakespeare

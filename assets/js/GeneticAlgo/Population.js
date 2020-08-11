@@ -40,8 +40,8 @@ class Population {
     this.matingPool = [];
     for (let i = 0; i < this.numberofGene; i++) {
       let n = 1;
-      if (this.bestScore != 0) {
-        n = Math.floor((this.genes[i].fitness / this.bestScore) * 100);
+      if (this.bestScore >0 ) {
+        n = Math.floor(this.genes[i].fitness * 100);
       }
       for (let j = 0; j < n; j++) {
         this.matingPool.push(this.genes[i]);
@@ -53,6 +53,7 @@ class Population {
     if (this.matingPool.length == 0) {
       throw "Mating pool is null";
     } else {
+      this.genes.length=0;
       for (let i = 0; i < this.numberofGene; i++) {
         let left_pos = Math.floor(
           Math.random() * Math.floor(this.matingPool.length)
@@ -60,10 +61,9 @@ class Population {
         let right_pos = Math.floor(
           Math.random() * Math.floor(this.matingPool.length)
         ); // Pick a point
-        let child = new Object();
-        child = this.matingPool[left_pos].crossover(this.matingPool[right_pos]);
+        let child = this.matingPool[left_pos].crossover(this.matingPool[right_pos]);
         child.mutation();
-        this.genes[i].gene = child.gene;
+        this.genes.push(child);
       }
     }
   }

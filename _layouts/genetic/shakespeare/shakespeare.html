@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	{% include head.html %}
+	<link rel="stylesheet" type="text/css" href="{{ 'assets/css/other/genetic/custom.css' | relative_url }}">
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Recursive:wght@600;800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+	{% include pre_loader.html %}
+
+	<!-- End of nav bar 
+		============================================= -->
+
+	<!-- Start of header
+		============================================= -->
+	<header id="site-header" class="not-stuck">
+		<div class="container">
+			<div class="row">
+				<div id="header-logo">
+					<a href="#"><img src="{{ 'assets/img//logo/logo.png' | relative_url }}" alt="img"></a>
+				</div>
+
+				<div id="menu-burger" class="pull-right not-stuck">
+					<div id="menu-bar">
+						<span class="icon-bar top"></span>
+						<span class="icon-bar middle"></span>
+						<span class="icon-bar bottom"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End of header
+		============================================= -->
+	<section id="portfolio" class="portfolio-section">
+		<div class="container">
+			<div class="tab-content clearfix" style="margin-top:20px;">
+				<div id="tab1" class="tab-pane fade in active">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Population</span>
+								<input type="number" class="form-control" placeholder="Number of populations"
+									aria-describedby="basic-addon1" id="quantityOfGens">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Target </span>
+								<input type="text" class="form-control" placeholder="Target"
+									aria-describedby="basic-addon1" id="textTarget">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Mutation</span>
+								<input type="number" class="form-control" placeholder="Mutation rate"
+									aria-describedby="basic-addon1" id="mutationRate">
+							</div>
+						</div>
+						<div class="col-md-4" style="visibility:hidden;" id="runAlgorithm">
+							<a class="btn btn-default outline" id="showtime" style="position: relative;">
+								<div class="icon">
+									<i class="ti-music material-icons"></i>
+									<i class="ti-trash material-icons"></i>
+								</div>
+								<span class="text">
+									Show time
+								</span>
+								<div class="icon">
+									<i class="ti-music-alt material-icons"></i>
+									<i class="ti-reload material-icons"></i>
+								</div></i>
+							</a>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 20px;">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Board Algorithm</h3>
+							</div>
+
+						</div>
+						<div id="grid">
+							<div class="noise"></div>
+							<div class="overlayhacker"></div>
+							<div class="row">
+								<div class="terminal col-md-5">
+									<h1>Genetic Algorithm </h1>
+									<p>&nbsp;</p>
+									<h3>Target: <span id="target"
+											style="font-family: 'Recursive', sans-serif;text-transform: none;"></span>
+									</h3>
+									<p>&nbsp;</p>
+									<p class="output">Total generations:<span class="errorcode" id="generations"></span>
+									</p>
+									<p></p>
+									<p class="output">Average fitness: <span class="errorcode"
+											id="averageFitness"></span> </p>
+									<p class="output">Total poulation: <span class="errorcode" id="populations"></span>
+									</p>
+									<p class="output">Mutation rate: <span class="errorcode"
+											id="mutationRateOutput"></span></p>
+								</div>
+								<div class="terminal col-md-7">
+									<div class="row">
+										<div class="col-md-6">
+											<h3>Best genes: <span id="bestGen"
+													style="font-family: 'Recursive', sans-serif;text-transform: none;"></span>
+											</h3>
+										</div>
+										<div class="col-md-6">
+											<h3>Best scores: <span id="bestScore"
+													style="font-family: 'Recursive', sans-serif;text-transform: none;"></span>
+											</h3>
+										</div>
+									</div>
+									<p>&nbsp;</p>
+									<h3>Some genes:</h3>
+									<p>&nbsp;</p>
+									<div class="row">
+										<div class="col-md-6">
+											<div id="all_genes_1">
+									
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div id="all_genes_2">
+									
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div id="tab2" class="tab-pane fade">
+					<h3>Tab 2</h3>
+					<p>Content for tab 2.</p>
+				</div>
+				<div id="tab3" class="tab-pane fade">
+					<h3>Tab 3</h3>
+					<p>Content for tab 3.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Start of page head section
+		============================================= -->
+
+
+	<!-- End of page head section
+		============================================= -->
+
+	<!-- Start of footer section
+		============================================= -->
+	<footer>
+		<div class="footer-area footer-2">
+			<div class="container">
+				<div class="row">
+					<div class="copy-right-area text-center">
+						<div class="page-head-social-item ul-li">
+							<ul class="page-head-social-list">
+								<li><a href="#"><span class="ti-facebook"></span></a></li>
+								<li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+								<li><a href="#"><span class="ti-google"></span></a></li>
+								<li><a href="#"><span class="ti-instagram"></span></a></li>
+							</ul><!-- /.page-head-social-list -->
+						</div>
+						<span>© puppin 2018 - All Rights Reserved </span>
+					</div>
+					<!-- //copy-right-area -->
+				</div><!--  /.container -->
+			</div><!--  /.row-->
+		</div><!--  /.footer-area -->
+	</footer>
+	<!-- End of footer section
+		============================================= -->
+
+	<!--  Js Library -->
+	<script src="{{ 'assets/js/jquery-2.1.4.min.js' | relative_url }}"></script>
+	<!-- Include  for bootstrap -->
+	<script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
+	<!-- Include isotope Js -->
+	<script src="{{ 'assets/js/jquery.isotope.min.js' | relative_url }}"></script>
+	<!-- Include lightbox -->
+	<script src="{{ 'assets/js/lightbox.js' | relative_url }}"></script>
+	<!-- Include Video js -->
+	<script src="{{ 'assets/js/jquery.magnific-popup.min.js' | relative_url }}"></script>
+	<!-- Include Owl-carousel -->
+	<script src="{{ 'assets/js/owl.carousel.min.js' | relative_url }}"></script>
+	<!-- Include Counter up -->
+	<script src="{{ 'assets/js/jquery.counterup.min.js' | relative_url }}"></script>
+	<script src="{{ 'assets/js/waypoints.min.js' | relative_url }}"></script>
+
+
+	<script type="text/javascript" src="{{ 'assets/js/p5.min.js' | relative_url}}"></script>
+
+	<!-- Include script.js -->
+	<script src="{{ 'assets/js/script.js' | relative_url }}"></script>
+	<script src="{{ 'assets/js/matter.min.js' | relative_url }}"></script>
+	<script src="{{ 'assets/custom.js' | relative_url }}"></script>
+
+	<script src="{{ 'assets/js/GeneticAlgo/script.js' | relative_url }}"></script>
+	<script src="{{ 'assets/js/GeneticAlgo/Individual.js' | relative_url }}"></script>
+	<script src="{{ 'assets/js/GeneticAlgo/Population.js' | relative_url }}"></script>
+	<script src="{{ 'assets/js/GeneticAlgo/Main.js' | relative_url }}"></script>
+
+	<!-- <script src="https://unpkg.com/isotope-layout@2/dist/isotope.pkgd.min.js"></script> -->
+
+</body>
+
+</html>
